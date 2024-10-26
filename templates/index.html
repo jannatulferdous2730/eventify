@@ -1,0 +1,192 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Document</title>
+    {% tailwind_css %}
+    <style>
+      :root {
+        --theme-font-color: #fd6f00;
+        --primary-font-color: black;
+        --secondary-font-color: gray;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        color: var(--primary-font-color);
+        background-color: white;
+        overflow-x: hidden;
+      }
+
+      .bg-event {
+        background-image: url("{% static 'images/event-bg.png' %}");
+      }
+
+      /* REUSED STYLES */
+
+      .padding-both {
+        padding: 30px 0;
+      }
+
+      .container {
+        width: 1200px;
+        margin: 0 auto;
+      }
+
+      .flex-div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .half-div {
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="navbar bg-base-100 border-b-2">
+          <div class="container">
+            <div class="flex-1">
+              <a class="btn btn-ghost text-xl">Eventify</a>
+            </div>
+            <div class="flex-none">
+              <ul class="menu menu-horizontal gap-2">
+                <li>
+                  <button class="btn btn-outline btn-primary">Primary</button>
+                </li>
+                <li>
+                  <button class="btn btn-outline">Default</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="m-4">
+        <div class="hero min-h-screen rounded-2xl bg-event">
+          <!-- <div class="hero-overlay bg-opacity-60 rounded-2xl"></div> -->
+          <div class="hero-content text-neutral-content">
+            <div class="container">
+              <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+              <p class="mb-5">
+                Provident cupiditate voluptatem et in. Quaerat fugiat ut
+                assumenda excepturi exercitationem quasi. In deleniti eaque aut
+                repudiandae et a id nisi.
+              </p>
+              <button class="btn btn-primary">Get Started</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="container ">
+          <div class="bg-white -mt-28 rounded-2xl overflow-hidden shadow-2xl">
+            <form action="" class="grid grid-cols-4 gap-6 p-6">
+              <div class="input-wrapper relative">
+                <label class="form-control w-full max-w-xs">
+                  <div class="label">
+                    <span class="label-text">What is your name?</span>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Type here"
+                    class="input input-bordered w-full max-w-xs"
+                  />
+                </label>
+              </div>
+
+              <div class="input-wrapper">
+                <label class="form-control w-full max-w-xs">
+                  <div class="label">
+                    <span class="label-text"
+                      >Pick the best fantasy franchise</span
+                    >
+                  </div>
+                  <select class="select select-bordered">
+                    <option disabled selected>Pick one</option>
+                    <option>Star Wars</option>
+                    <option>Harry Potter</option>
+                    <option>Lord of the Rings</option>
+                    <option>Planet of the Apes</option>
+                    <option>Star Trek</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="input-wrapper">
+                <label class="form-control w-full max-w-xs">
+                  <div class="label">
+                    <span class="label-text"
+                      >Pick the best fantasy franchise</span
+                    >
+                  </div>
+                  <select class="select select-bordered">
+                    <option disabled selected>Pick one</option>
+                    <option>Star Wars</option>
+                    <option>Harry Potter</option>
+                    <option>Lord of the Rings</option>
+                    <option>Planet of the Apes</option>
+                    <option>Star Trek</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="input-wrapper">
+                <label class="form-control w-full max-w-xs">
+                  <div class="label">
+                    <span class="label-text"
+                      >Pick the best fantasy franchise</span
+                    >
+                  </div>
+                  <select class="select select-bordered">
+                    <option disabled selected>Pick one</option>
+                    <option>Star Wars</option>
+                    <option>Harry Potter</option>
+                    <option>Lord of the Rings</option>
+                    <option>Planet of the Apes</option>
+                    <option>Star Trek</option>
+                  </select>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-full">
+                Search now
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="services container py-10">
+
+        <h1 class="flex justify-center text-4xl font-semibold pb-5">OUR SERVICES</h1>
+
+        <div class="grid grid-cols-4 gap-2">
+          <!-- {% for service in services %} -->
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <figure><img src="{{service.image.url}}" alt="Shoes" /></figure>
+            <div class="card-body">
+              <h2 class="card-title">{{service.name}}</h2>
+              <p>{{service.description}}</p>
+            </div>
+          </div>
+          <!-- {% endfor %} -->
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
