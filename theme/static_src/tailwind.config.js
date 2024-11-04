@@ -5,6 +5,8 @@
  * https://unpkg.com/browse/tailwindcss@latest/stubs/defaultConfig.stub.js
  */
 
+const { dark, forest } = require("daisyui/src/theming/themes");
+
 module.exports = {
     content: [
         /**
@@ -49,8 +51,11 @@ module.exports = {
       {
         light: {
           ...require("daisyui/src/theming/themes")["light"],
-          primary: "#3b8132",
+          primary: "#40916C",
           secondary: "teal",
+          accent: "#37cdbe",
+          neutral: "#3d4451",
+          "base-100": "#ffffff",
         },
       },
     ], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
