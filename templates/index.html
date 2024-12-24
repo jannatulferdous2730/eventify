@@ -1,990 +1,777 @@
+{% extends "base.html" %}
+
 {% load static tailwind_tags %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <title>Document</title>
-    {% tailwind_css %}
-    <style>
-      :root {
-        --theme-font-color: #fd6f00;
-        --primary-font-color: black;
-        --secondary-font-color: gray;
-      }
 
-      * {
-        margin: 0;
-        padding: 0;
-        text-decoration: none;
-      }
+{% block title %}Home - Eventify{% endblock %}
 
-      body {
-        font-family: "Poppins", sans-serif;
-        /* color: var(--primary-font-color); */
-        /* background-color: white; */
-        overflow-x: hidden;
-      }
+{% block content %}
 
-      .bg-event {
-        background-image: url("{% static 'images/event-bg.png' %}");
-      }
+<div class="m-4">
+    <div class="hero min-h-screen rounded-2xl bg-event">
+      <!-- <div class="hero-overlay bg-opacity-60 rounded-2xl"></div> -->
+      <div class="hero-content text-neutral-content">
+        <div class="container">
+          <h1 class="mb-5 text-5xl font-bold leading-normal">Celebrate effortlessly  <br>with <span class="text-amber-400">Expert</span> Event Management</h1>
+          
+          
+        </div>
+      </div>
+    </div>
 
-      /* REUSED STYLES */
+    <div class="container ">
+      <div class="bg-white -mt-28 rounded-2xl overflow-hidden shadow-2xl">
+        <form action="" class="grid grid-cols-4 gap-6 p-6">
+          <div class="input-wrapper relative">
+            <label class="form-control w-full max-w-xs">
+              <div class="label">
+                <span class="label-text font-semibold">Search by Venue Name</span>
+              </div>
+              <input
+                type="text"
+                placeholder="Type here"
+                class="input input-bordered w-full max-w-xs"
+              />
+            </label>
+          </div>
 
-      .padding-both {
-        padding: 30px 0;
-      }
+          <div class="input-wrapper">
+            <label class="form-control w-full max-w-xs">
+              <div class="label">
+                <span class="label-text font-semibold"
+                  >Pick the Event Categories</span
+                >
+              </div>
+              <select class="select select-bordered">
+                <option disabled selected>Pick one</option>
+                <option>Wedding</option>
+                <option>Birthday</option>
+                <option>Festival</option>
+                <option>Corporate</option>
+                <option>Sports</option>
+              </select>
+            </label>
+          </div>
 
-      .container {
-        width: 1200px;
-        margin: 0 auto;
-      }
+          <div class="input-wrapper">
+            <label class="form-control w-full max-w-xs">
+              <div class="label">
+                <span class="label-text font-semibold">Pick the Catering Preferences</span>
+              </div>
+              <select class="select select-bordered">
+                <option disabled selected>Pick one</option>
+                <option>Italian cuisine</option>
+                <option>Chinese cuisine</option>
+                <option>Indian cuisine</option>
+                <option>Bangali cuisine</option>
+                <option>Pakistani cuisine</option>
+              </select>
+            </label>
+          </div>
 
-      .flex-div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+          <div class="input-wrapper">
+            <label class="form-control w-full max-w-xs">
+              <div class="label">
+                <span class="label-text font-semibold"
+                  >Pick the Location</span
+                >
+              </div>
+              <select class="select select-bordered">
+                <option disabled selected>Pick one</option>
+                <option>Chittagong</option>
+                <option>Dhaka</option>
+                <option>Cumilla</option>
+                <option>Rajshahi</option>
+                <option>Khulna</option>
+              </select>
+            </label>
+          </div>
 
-      .half-div {
-        width: 50%;
-      }
-    </style>
-  </head>
-  <body>
-    <header class="sticky top-0 z-50">
-      <nav>
-        <div class="navbar bg-base-100 border-b-2">
-          <div class="container">
-            <div class="flex-1">
-              <a class="btn btn-ghost text-xl">Eventify</a>
-            </div>
-            <div class="flex-none">
-              <ul class="menu menu-horizontal gap-2">
-                <li>
-                  <button class="btn btn-outline btn-primary">Log In</button>
+          <button type="submit" class="btn btn-primary w-full">
+            Search now
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="services container py-16">
+
+    <h1 class="flex justify-center text-4xl font-semibold mb-8">OUR SERVICES</h1>
+
+    <div class="grid grid-cols-3 gap-x-16 gap-y-8">
+
+      <div class="card bg-green-300 shadow-lg w-[350px] ">
+        <div class="card-body items-center text-center">
+          <div class="bg-white rounded-full p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
+              <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+            </svg>
+            
+            
+          </div>
+          <h2 class="card-title">Venue Selection</h2>
+          <p>We are using cookies for no reason.</p>
+        </div>
+      </div>
+      <div class="card bg-green-300 shadow-lg w-[350px]">
+        <div class="card-body items-center text-center">
+          <div class="bg-white rounded-full p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
+              <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+              <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+            </svg>
+          </div>
+          <h2 class="card-title">Invitation Card</h2>
+          <p>We are using cookies for no reason.</p>
+        </div>
+      </div>
+      <div class="card bg-green-300 shadow-lg w-[350px]">
+        <div class="card-body items-center text-center">
+          <div class="bg-white rounded-full p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
+              <path fill-rule="evenodd" d="M19.952 1.651a.75.75 0 0 1 .298.599V16.303a3 3 0 0 1-2.176 2.884l-1.32.377a2.553 2.553 0 1 1-1.403-4.909l2.311-.66a1.5 1.5 0 0 0 1.088-1.442V6.994l-9 2.572v9.737a3 3 0 0 1-2.176 2.884l-1.32.377a2.553 2.553 0 1 1-1.402-4.909l2.31-.66a1.5 1.5 0 0 0 1.088-1.442V5.25a.75.75 0 0 1 .544-.721l10.5-3a.75.75 0 0 1 .658.122Z" clip-rule="evenodd" />
+            </svg>
+            
+          </div>
+          <h2 class="card-title">Entertainment</h2>
+          <p>We are using cookies for no reason.</p>
+        </div>
+      </div>
+      <div class="card bg-green-300 shadow-lg w-[350px]">
+        <div class="card-body items-center text-center">
+          <div class="bg-white rounded-full p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
+              <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.062 0 8.25 8.25 0 0 0-11.667 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.204 3.182a6 6 0 0 1 8.486 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0 3.75 3.75 0 0 0-5.304 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182a1.5 1.5 0 0 1 2.122 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0l-.53-.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+            </svg>
+            
+          </div>
+          <h2 class="card-title">Network</h2>
+          <p>We are using cookies for no reason.</p>
+        </div>
+      </div>
+      <div class="card bg-green-300 shadow-lg w-[350px]">
+        <div class="card-body items-center text-center">
+          <div class="bg-white rounded-full p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
+              <path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" />
+              <path fill-rule="evenodd" d="M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+            </svg>
+            
+          </div>
+          <h2 class="card-title">Photos and Videos</h2>
+          <p>We are using cookies for no reason.</p>
+        </div>
+      </div>
+      <div class="card bg-green-300 shadow-lg w-[350px]">
+        <div class="card-body items-center text-center">
+          <div class="bg-white rounded-full p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
+              <path d="m15 1.784-.796.795a1.125 1.125 0 1 0 1.591 0L15 1.784ZM12 1.784l-.796.795a1.125 1.125 0 1 0 1.591 0L12 1.784ZM9 1.784l-.796.795a1.125 1.125 0 1 0 1.591 0L9 1.784ZM9.75 7.547c.498-.021.998-.035 1.5-.042V6.75a.75.75 0 0 1 1.5 0v.755c.502.007 1.002.021 1.5.042V6.75a.75.75 0 0 1 1.5 0v.88l.307.022c1.55.117 2.693 1.427 2.693 2.946v1.018a62.182 62.182 0 0 0-13.5 0v-1.018c0-1.519 1.143-2.829 2.693-2.946l.307-.022v-.88a.75.75 0 0 1 1.5 0v.797ZM12 12.75c-2.472 0-4.9.184-7.274.54-1.454.217-2.476 1.482-2.476 2.916v.384a4.104 4.104 0 0 1 2.585.364 2.605 2.605 0 0 0 2.33 0 4.104 4.104 0 0 1 3.67 0 2.605 2.605 0 0 0 2.33 0 4.104 4.104 0 0 1 3.67 0 2.605 2.605 0 0 0 2.33 0 4.104 4.104 0 0 1 2.585-.364v-.384c0-1.434-1.022-2.7-2.476-2.917A49.138 49.138 0 0 0 12 12.75ZM21.75 18.131a2.604 2.604 0 0 0-1.915.165 4.104 4.104 0 0 1-3.67 0 2.605 2.605 0 0 0-2.33 0 4.104 4.104 0 0 1-3.67 0 2.605 2.605 0 0 0-2.33 0 4.104 4.104 0 0 1-3.67 0 2.604 2.604 0 0 0-1.915-.165v2.494c0 1.035.84 1.875 1.875 1.875h15.75c1.035 0 1.875-.84 1.875-1.875v-2.494Z" />
+            </svg>
+          </div>
+          <h2 class="card-title">Custom Food</h2>
+          <p>We are using cookies for no reason.</p>
+        </div>
+      </div>
+      
+
+    </div>
+
+  </div>
+
+  <div class="Venues container py-16">
+
+    <h1 class="flex justify-center text-4xl font-semibold mb-8">OUR VENUES</h1>
+
+    <ul class="property-list grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+        <li>
+          <div class="property-card relative rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+            <figure class="card-banner relative ">
+              <img src="{% static 'images/venues/venue1.png' %}" alt="Convention Hall" loading="lazy" class="w-full h-64">
+            </figure>
+          
+            <div class="card-content p-6">
+              <div class="min-h-24">
+                <h3 class="h3 text-xl font-semibold mb-2">
+                  <a href={% url 'venue_page' %} class="card-title transition-colors duration-300 hover:text-green-600">KB Convention Hall</a>
+                </h3>
+                <div class="mb-5 flex justify-between">
+                  <p class="">Badurtola, Bahaddarhat, Chittagong</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+          
+              <ul class="card-list flex flex-wrap justify-between gap-x-4 gap-y-2 py-4 border-t border-b border-gray-300 mb-6">
+                <li class="card-item flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clip-rule="evenodd" />
+                    <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
+                  </svg>
+                  <span class="item-text">1200</span>
                 </li>
-                <li>
-                  <button class="btn btn-outline">Register</button>
+                <li class="card-item flex items-center gap-2">
+                  <svg fill="currentColor" class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.523 272.523"> 
+                    <path d="M193.26,118.059c-0.877,0-1.777,0.126-2.677,0.373l-10.172,2.802L169.85,95.504c-2.993-7.289-11.838-13.22-19.717-13.22 h-98.85c-7.88,0-16.724,5.931-19.716,13.22l-10.548,25.694l-10.046-2.767c-0.899-0.247-1.799-0.373-2.676-0.373 c-4.808,0-8.297,3.673-8.297,8.732v5.996c0,5.906,4.806,10.712,10.712,10.712h1.151l-1.705,4.153 c-2.78,6.77-5.043,18.236-5.043,25.558v51.115c0,5.906,4.806,10.712,10.712,10.712h13.99c5.906,0,10.712-4.806,10.712-10.712 v-12.764h120.357v12.764c0,5.906,4.806,10.712,10.712,10.712h13.988c5.906,0,10.712-4.806,10.712-10.712V173.21 c0-7.321-2.263-18.787-5.043-25.558l-1.705-4.153h1.294c5.906,0,10.712-4.806,10.712-10.712v-5.996 C201.557,121.732,198.067,118.059,193.26,118.059z M28.698,137.681l15.978-38.918c1.79-4.36,7.11-7.928,11.823-7.928h88.418 c4.713,0,10.033,3.567,11.823,7.928l15.978,38.918c1.789,4.36-0.602,7.928-5.315,7.928H34.014 C29.3,145.608,26.909,142.041,28.698,137.681z M64.365,186.908c0,2.357-1.929,4.284-4.284,4.284H29.729 c-2.357,0-4.285-1.928-4.285-4.284v-14.566c0-2.356,1.928-4.284,4.285-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z M175.684,186.908c0,2.357-1.929,4.284-4.284,4.284h-30.352c-2.355,0-4.284-1.928-4.284-4.284v-14.566 c0-2.356,1.929-4.284,4.284-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z"></path>
+                    <path d="M259.125,37.486H208.39c-7.388,0-13.398,6.011-13.398,13.398v50.736c0,7.388,6.011,13.399,13.398,13.399h20.367v113.872 c0,2.762,2.238,5,5,5c2.762,0,5-2.238,5-5V115.02h20.368c7.388,0,13.398-6.011,13.398-13.399V50.885 C272.523,43.497,266.513,37.486,259.125,37.486z M247.634,79.553c-2.918,2.627-7.216,3.959-12.774,3.959h-7.347 c-0.882,0-1.6,0.719-1.6,1.601v12.389c0,1.346-1.095,2.44-2.441,2.44h-5.564c-1.347,0-2.441-1.095-2.441-2.44V55.007 c0-1.347,1.095-2.442,2.441-2.442h14.016c9.285,0,12.751,1.399,15.599,3.816c3.004,2.549,4.526,6.453,4.526,11.606 C252.048,73.022,250.564,76.912,247.634,79.553z"></path> 
+                    <path d="M239.681,62.825c-1.356-1.024-3.755-1.544-7.129-1.544h-5.039c-0.882,0-1.6,0.718-1.6,1.599v10.182 c0,0.881,0.718,1.599,1.6,1.599h3.019c1.109,0,2.901-0.082,3.994-0.183c1.061-0.097,4.056-0.531,5.155-1.361 c1.319-0.998,1.988-2.724,1.988-5.129C241.669,65.56,241,63.823,239.681,62.825z"></path>
+                  </svg>                      
+                  <span class="item-text">Available</span>
+                </li>
+                <li class="card-item flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.062 0 8.25 8.25 0 0 0-11.667 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.204 3.182a6 6 0 0 1 8.486 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0 3.75 3.75 0 0 0-5.304 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182a1.5 1.5 0 0 1 2.122 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0l-.53-.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="item-text">Free</span>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <div class="m-4">
-        <div class="hero min-h-screen rounded-2xl bg-event">
-          <!-- <div class="hero-overlay bg-opacity-60 rounded-2xl"></div> -->
-          <div class="hero-content text-neutral-content">
-            <div class="container">
-              <h1 class="mb-5 text-5xl font-bold leading-normal">Celebrate effortlessly  <br>with <span class="text-amber-400">Expert</span> Event Management</h1>
-              
-              
-            </div>
-          </div>
-        </div>
-
-        <div class="container ">
-          <div class="bg-white -mt-28 rounded-2xl overflow-hidden shadow-2xl">
-            <form action="" class="grid grid-cols-4 gap-6 p-6">
-              <div class="input-wrapper relative">
-                <label class="form-control w-full max-w-xs">
-                  <div class="label">
-                    <span class="label-text font-semibold">Search by Venue Name</span>
-                  </div>
-                  <input
-                    type="text"
-                    placeholder="Type here"
-                    class="input input-bordered w-full max-w-xs"
-                  />
-                </label>
-              </div>
-
-              <div class="input-wrapper">
-                <label class="form-control w-full max-w-xs">
-                  <div class="label">
-                    <span class="label-text font-semibold"
-                      >Pick the Event Categories</span
-                    >
-                  </div>
-                  <select class="select select-bordered">
-                    <option disabled selected>Pick one</option>
-                    <option>Wedding</option>
-                    <option>Birthday</option>
-                    <option>Festival</option>
-                    <option>Corporate</option>
-                    <option>Sports</option>
-                  </select>
-                </label>
-              </div>
-
-              <div class="input-wrapper">
-                <label class="form-control w-full max-w-xs">
-                  <div class="label">
-                    <span class="label-text font-semibold">Pick the Catering Preferences</span>
-                  </div>
-                  <select class="select select-bordered">
-                    <option disabled selected>Pick one</option>
-                    <option>Italian cuisine</option>
-                    <option>Chinese cuisine</option>
-                    <option>Indian cuisine</option>
-                    <option>Bangali cuisine</option>
-                    <option>Pakistani cuisine</option>
-                  </select>
-                </label>
-              </div>
-
-              <div class="input-wrapper">
-                <label class="form-control w-full max-w-xs">
-                  <div class="label">
-                    <span class="label-text font-semibold"
-                      >Pick the Location</span
-                    >
-                  </div>
-                  <select class="select select-bordered">
-                    <option disabled selected>Pick one</option>
-                    <option>Chittagong</option>
-                    <option>Dhaka</option>
-                    <option>Cumilla</option>
-                    <option>Rajshahi</option>
-                    <option>Khulna</option>
-                  </select>
-                </label>
-              </div>
-
-              <button type="submit" class="btn btn-primary w-full">
-                Search now
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="services container py-16">
-
-        <h1 class="flex justify-center text-4xl font-semibold mb-8">OUR SERVICES</h1>
-
-        <div class="grid grid-cols-3 gap-x-16 gap-y-8">
-
-          <div class="card bg-green-300 shadow-lg w-[350px] ">
-            <div class="card-body items-center text-center">
-              <div class="bg-white rounded-full p-3">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
-                  <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
-                </svg>
-                
-                
-              </div>
-              <h2 class="card-title">Venue Selection</h2>
-              <p>We are using cookies for no reason.</p>
-            </div>
-          </div>
-          <div class="card bg-green-300 shadow-lg w-[350px]">
-            <div class="card-body items-center text-center">
-              <div class="bg-white rounded-full p-3">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
-                  <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
-                  <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
-                </svg>
-              </div>
-              <h2 class="card-title">Invitation Card</h2>
-              <p>We are using cookies for no reason.</p>
-            </div>
-          </div>
-          <div class="card bg-green-300 shadow-lg w-[350px]">
-            <div class="card-body items-center text-center">
-              <div class="bg-white rounded-full p-3">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
-                  <path fill-rule="evenodd" d="M19.952 1.651a.75.75 0 0 1 .298.599V16.303a3 3 0 0 1-2.176 2.884l-1.32.377a2.553 2.553 0 1 1-1.403-4.909l2.311-.66a1.5 1.5 0 0 0 1.088-1.442V6.994l-9 2.572v9.737a3 3 0 0 1-2.176 2.884l-1.32.377a2.553 2.553 0 1 1-1.402-4.909l2.31-.66a1.5 1.5 0 0 0 1.088-1.442V5.25a.75.75 0 0 1 .544-.721l10.5-3a.75.75 0 0 1 .658.122Z" clip-rule="evenodd" />
-                </svg>
-                
-              </div>
-              <h2 class="card-title">Entertainment</h2>
-              <p>We are using cookies for no reason.</p>
-            </div>
-          </div>
-          <div class="card bg-green-300 shadow-lg w-[350px]">
-            <div class="card-body items-center text-center">
-              <div class="bg-white rounded-full p-3">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
-                  <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.062 0 8.25 8.25 0 0 0-11.667 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.204 3.182a6 6 0 0 1 8.486 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0 3.75 3.75 0 0 0-5.304 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182a1.5 1.5 0 0 1 2.122 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0l-.53-.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                </svg>
-                
-              </div>
-              <h2 class="card-title">Network</h2>
-              <p>We are using cookies for no reason.</p>
-            </div>
-          </div>
-          <div class="card bg-green-300 shadow-lg w-[350px]">
-            <div class="card-body items-center text-center">
-              <div class="bg-white rounded-full p-3">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
-                  <path d="M12 9a3.75 3.75 0 1 0 0 7.5A3.75 3.75 0 0 0 12 9Z" />
-                  <path fill-rule="evenodd" d="M9.344 3.071a49.52 49.52 0 0 1 5.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 0 1-3 3h-15a3 3 0 0 1-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 0 0 1.11-.71l.822-1.315a2.942 2.942 0 0 1 2.332-1.39ZM6.75 12.75a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Zm12-1.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
-                </svg>
-                
-              </div>
-              <h2 class="card-title">Photos and Videos</h2>
-              <p>We are using cookies for no reason.</p>
-            </div>
-          </div>
-          <div class="card bg-green-300 shadow-lg w-[350px]">
-            <div class="card-body items-center text-center">
-              <div class="bg-white rounded-full p-3">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
-                  <path d="m15 1.784-.796.795a1.125 1.125 0 1 0 1.591 0L15 1.784ZM12 1.784l-.796.795a1.125 1.125 0 1 0 1.591 0L12 1.784ZM9 1.784l-.796.795a1.125 1.125 0 1 0 1.591 0L9 1.784ZM9.75 7.547c.498-.021.998-.035 1.5-.042V6.75a.75.75 0 0 1 1.5 0v.755c.502.007 1.002.021 1.5.042V6.75a.75.75 0 0 1 1.5 0v.88l.307.022c1.55.117 2.693 1.427 2.693 2.946v1.018a62.182 62.182 0 0 0-13.5 0v-1.018c0-1.519 1.143-2.829 2.693-2.946l.307-.022v-.88a.75.75 0 0 1 1.5 0v.797ZM12 12.75c-2.472 0-4.9.184-7.274.54-1.454.217-2.476 1.482-2.476 2.916v.384a4.104 4.104 0 0 1 2.585.364 2.605 2.605 0 0 0 2.33 0 4.104 4.104 0 0 1 3.67 0 2.605 2.605 0 0 0 2.33 0 4.104 4.104 0 0 1 3.67 0 2.605 2.605 0 0 0 2.33 0 4.104 4.104 0 0 1 2.585-.364v-.384c0-1.434-1.022-2.7-2.476-2.917A49.138 49.138 0 0 0 12 12.75ZM21.75 18.131a2.604 2.604 0 0 0-1.915.165 4.104 4.104 0 0 1-3.67 0 2.605 2.605 0 0 0-2.33 0 4.104 4.104 0 0 1-3.67 0 2.605 2.605 0 0 0-2.33 0 4.104 4.104 0 0 1-3.67 0 2.604 2.604 0 0 0-1.915-.165v2.494c0 1.035.84 1.875 1.875 1.875h15.75c1.035 0 1.875-.84 1.875-1.875v-2.494Z" />
-                </svg>
-              </div>
-              <h2 class="card-title">Custom Food</h2>
-              <p>We are using cookies for no reason.</p>
-            </div>
-          </div>
           
+              <div class="card-meta flex flex-wrap justify-between items-center gap-4">
+                <div class="flex flex-col justify-start">
+                  <span class="meta-title text-start text-gray-500">Price</span>
+                  <div>
+                    <span class="meta-text text-xl font-medium">৳25,000</span>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-end">
+                  <span class="meta-title text-end text-gray-500">Type</span>
+                  <div class="">
+                    <span class="meta-text text-xl font-medium">Convention Hall</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>  
+        
+        <li>
+          <div class="property-card relative rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+            <figure class="card-banner relative">
+              <img src="{% static 'images/venues/venue2.png' %}" alt="Convention Hall" loading="lazy" class="w-full h-64">
+            </figure>
+          
+            <div class="card-content p-6">
+              <div class="min-h-24">
+                <h3 class="h3 text-xl font-semibold mb-2">
+                  <a href="#" class="card-title transition-colors duration-300 hover:text-green-600">Matita Convention Hall</a>
+                </h3>
+                <div class="mb-5 flex justify-between">
+                  <p class="">Badurtola, Bahaddarhat, Chittagong</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+          
+              <ul class="card-list flex flex-wrap justify-between gap-x-4 gap-y-2 py-4 border-t border-b border-gray-300 mb-6">
+                <li class="card-item flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clip-rule="evenodd" />
+                    <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
+                  </svg>
+                  <span class="item-text">1200</span>
+                </li>
+                <li class="card-item flex items-center gap-2">
+                  <svg fill="currentColor" class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.523 272.523"> 
+                    <path d="M193.26,118.059c-0.877,0-1.777,0.126-2.677,0.373l-10.172,2.802L169.85,95.504c-2.993-7.289-11.838-13.22-19.717-13.22 h-98.85c-7.88,0-16.724,5.931-19.716,13.22l-10.548,25.694l-10.046-2.767c-0.899-0.247-1.799-0.373-2.676-0.373 c-4.808,0-8.297,3.673-8.297,8.732v5.996c0,5.906,4.806,10.712,10.712,10.712h1.151l-1.705,4.153 c-2.78,6.77-5.043,18.236-5.043,25.558v51.115c0,5.906,4.806,10.712,10.712,10.712h13.99c5.906,0,10.712-4.806,10.712-10.712 v-12.764h120.357v12.764c0,5.906,4.806,10.712,10.712,10.712h13.988c5.906,0,10.712-4.806,10.712-10.712V173.21 c0-7.321-2.263-18.787-5.043-25.558l-1.705-4.153h1.294c5.906,0,10.712-4.806,10.712-10.712v-5.996 C201.557,121.732,198.067,118.059,193.26,118.059z M28.698,137.681l15.978-38.918c1.79-4.36,7.11-7.928,11.823-7.928h88.418 c4.713,0,10.033,3.567,11.823,7.928l15.978,38.918c1.789,4.36-0.602,7.928-5.315,7.928H34.014 C29.3,145.608,26.909,142.041,28.698,137.681z M64.365,186.908c0,2.357-1.929,4.284-4.284,4.284H29.729 c-2.357,0-4.285-1.928-4.285-4.284v-14.566c0-2.356,1.928-4.284,4.285-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z M175.684,186.908c0,2.357-1.929,4.284-4.284,4.284h-30.352c-2.355,0-4.284-1.928-4.284-4.284v-14.566 c0-2.356,1.929-4.284,4.284-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z"></path>
+                    <path d="M259.125,37.486H208.39c-7.388,0-13.398,6.011-13.398,13.398v50.736c0,7.388,6.011,13.399,13.398,13.399h20.367v113.872 c0,2.762,2.238,5,5,5c2.762,0,5-2.238,5-5V115.02h20.368c7.388,0,13.398-6.011,13.398-13.399V50.885 C272.523,43.497,266.513,37.486,259.125,37.486z M247.634,79.553c-2.918,2.627-7.216,3.959-12.774,3.959h-7.347 c-0.882,0-1.6,0.719-1.6,1.601v12.389c0,1.346-1.095,2.44-2.441,2.44h-5.564c-1.347,0-2.441-1.095-2.441-2.44V55.007 c0-1.347,1.095-2.442,2.441-2.442h14.016c9.285,0,12.751,1.399,15.599,3.816c3.004,2.549,4.526,6.453,4.526,11.606 C252.048,73.022,250.564,76.912,247.634,79.553z"></path> 
+                    <path d="M239.681,62.825c-1.356-1.024-3.755-1.544-7.129-1.544h-5.039c-0.882,0-1.6,0.718-1.6,1.599v10.182 c0,0.881,0.718,1.599,1.6,1.599h3.019c1.109,0,2.901-0.082,3.994-0.183c1.061-0.097,4.056-0.531,5.155-1.361 c1.319-0.998,1.988-2.724,1.988-5.129C241.669,65.56,241,63.823,239.681,62.825z"></path>
+                  </svg>                      
+                  <span class="item-text">Available</span>
+                </li>
+                <li class="card-item flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.062 0 8.25 8.25 0 0 0-11.667 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.204 3.182a6 6 0 0 1 8.486 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0 3.75 3.75 0 0 0-5.304 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182a1.5 1.5 0 0 1 2.122 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0l-.53-.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="item-text">Free</span>
+                </li>
+              </ul>
+          
+              <div class="card-meta flex flex-wrap justify-between items-center gap-4">
+                <div class="flex flex-col justify-start">
+                  <span class="meta-title text-start text-gray-500">Price</span>
+                  <div>
+                    <span class="meta-text text-xl font-medium">৳250,000</span>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-end">
+                  <span class="meta-title text-end text-gray-500">Type</span>
+                  <div class="">
+                    <span class="meta-text text-xl font-medium">Convention Hall</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li> 
 
-        </div>
+        <li>
+          <div class="property-card relative rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+            <figure class="card-banner relative">
+              <img src="{% static 'images/venues/venue3.png' %}" alt="Convention Hall" loading="lazy" class="w-full h-64">
+            </figure>
+          
+            <div class="card-content p-6">
+              <div class="min-h-24">
+                <h3 class="h3 text-xl font-semibold mb-2">
+                  <a href="#" class="card-title transition-colors duration-300 hover:text-green-600">RB Convention Hall</a>
+                </h3>
+                <div class="mb-5 flex justify-between">
+                  <p class="">Badurtola, Bahaddarhat, Chittagong</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+          
+              <ul class="card-list flex flex-wrap justify-between gap-x-4 gap-y-2 py-4 border-t border-b border-gray-300 mb-6">
+                <li class="card-item flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clip-rule="evenodd" />
+                    <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
+                  </svg>
+                  <span class="item-text">1200</span>
+                </li>
+                <li class="card-item flex items-center gap-2">
+                  <svg fill="currentColor" class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.523 272.523"> 
+                    <path d="M193.26,118.059c-0.877,0-1.777,0.126-2.677,0.373l-10.172,2.802L169.85,95.504c-2.993-7.289-11.838-13.22-19.717-13.22 h-98.85c-7.88,0-16.724,5.931-19.716,13.22l-10.548,25.694l-10.046-2.767c-0.899-0.247-1.799-0.373-2.676-0.373 c-4.808,0-8.297,3.673-8.297,8.732v5.996c0,5.906,4.806,10.712,10.712,10.712h1.151l-1.705,4.153 c-2.78,6.77-5.043,18.236-5.043,25.558v51.115c0,5.906,4.806,10.712,10.712,10.712h13.99c5.906,0,10.712-4.806,10.712-10.712 v-12.764h120.357v12.764c0,5.906,4.806,10.712,10.712,10.712h13.988c5.906,0,10.712-4.806,10.712-10.712V173.21 c0-7.321-2.263-18.787-5.043-25.558l-1.705-4.153h1.294c5.906,0,10.712-4.806,10.712-10.712v-5.996 C201.557,121.732,198.067,118.059,193.26,118.059z M28.698,137.681l15.978-38.918c1.79-4.36,7.11-7.928,11.823-7.928h88.418 c4.713,0,10.033,3.567,11.823,7.928l15.978,38.918c1.789,4.36-0.602,7.928-5.315,7.928H34.014 C29.3,145.608,26.909,142.041,28.698,137.681z M64.365,186.908c0,2.357-1.929,4.284-4.284,4.284H29.729 c-2.357,0-4.285-1.928-4.285-4.284v-14.566c0-2.356,1.928-4.284,4.285-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z M175.684,186.908c0,2.357-1.929,4.284-4.284,4.284h-30.352c-2.355,0-4.284-1.928-4.284-4.284v-14.566 c0-2.356,1.929-4.284,4.284-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z"></path>
+                    <path d="M259.125,37.486H208.39c-7.388,0-13.398,6.011-13.398,13.398v50.736c0,7.388,6.011,13.399,13.398,13.399h20.367v113.872 c0,2.762,2.238,5,5,5c2.762,0,5-2.238,5-5V115.02h20.368c7.388,0,13.398-6.011,13.398-13.399V50.885 C272.523,43.497,266.513,37.486,259.125,37.486z M247.634,79.553c-2.918,2.627-7.216,3.959-12.774,3.959h-7.347 c-0.882,0-1.6,0.719-1.6,1.601v12.389c0,1.346-1.095,2.44-2.441,2.44h-5.564c-1.347,0-2.441-1.095-2.441-2.44V55.007 c0-1.347,1.095-2.442,2.441-2.442h14.016c9.285,0,12.751,1.399,15.599,3.816c3.004,2.549,4.526,6.453,4.526,11.606 C252.048,73.022,250.564,76.912,247.634,79.553z"></path> 
+                    <path d="M239.681,62.825c-1.356-1.024-3.755-1.544-7.129-1.544h-5.039c-0.882,0-1.6,0.718-1.6,1.599v10.182 c0,0.881,0.718,1.599,1.6,1.599h3.019c1.109,0,2.901-0.082,3.994-0.183c1.061-0.097,4.056-0.531,5.155-1.361 c1.319-0.998,1.988-2.724,1.988-5.129C241.669,65.56,241,63.823,239.681,62.825z"></path>
+                  </svg>                      
+                  <span class="item-text">Available</span>
+                </li>
+                <li class="card-item flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.062 0 8.25 8.25 0 0 0-11.667 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.204 3.182a6 6 0 0 1 8.486 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0 3.75 3.75 0 0 0-5.304 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182a1.5 1.5 0 0 1 2.122 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0l-.53-.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="item-text">Free</span>
+                </li>
+              </ul>
+          
+              <div class="card-meta flex flex-wrap justify-between items-center gap-4">
+                <div class="flex flex-col justify-start">
+                  <span class="meta-title text-start text-gray-500">Price</span>
+                  <div>
+                    <span class="meta-text text-xl font-medium">৳25,000</span>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-end">
+                  <span class="meta-title text-end text-gray-500">Type</span>
+                  <div class="">
+                    <span class="meta-text text-xl font-medium">Convention Hall</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li> 
 
+        <li>
+          <div class="property-card relative rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+            <figure class="card-banner relative">
+              <img src="{% static 'images/venues/venue4.png' %}" alt="Convention Hall" loading="lazy" class="w-full h-64">
+            </figure>
+          
+            <div class="card-content p-6">
+              <div class="min-h-24">
+                <h3 class="h3 text-xl font-semibold mb-2">
+                  <a href="#" class="card-title transition-colors duration-300 hover:text-green-600">SB Convention Hall</a>
+                </h3>
+                <div class="mb-5 flex justify-between">
+                  <p class="">Badurtola, Bahaddarhat, Chittagong</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+          
+              <ul class="card-list flex flex-wrap justify-between gap-x-4 gap-y-2 py-4 border-t border-b border-gray-300 mb-6">
+                <li class="card-item flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clip-rule="evenodd" />
+                    <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
+                  </svg>
+                  <span class="item-text">1200</span>
+                </li>
+                <li class="card-item flex items-center gap-2">
+                  <svg fill="currentColor" class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.523 272.523"> 
+                    <path d="M193.26,118.059c-0.877,0-1.777,0.126-2.677,0.373l-10.172,2.802L169.85,95.504c-2.993-7.289-11.838-13.22-19.717-13.22 h-98.85c-7.88,0-16.724,5.931-19.716,13.22l-10.548,25.694l-10.046-2.767c-0.899-0.247-1.799-0.373-2.676-0.373 c-4.808,0-8.297,3.673-8.297,8.732v5.996c0,5.906,4.806,10.712,10.712,10.712h1.151l-1.705,4.153 c-2.78,6.77-5.043,18.236-5.043,25.558v51.115c0,5.906,4.806,10.712,10.712,10.712h13.99c5.906,0,10.712-4.806,10.712-10.712 v-12.764h120.357v12.764c0,5.906,4.806,10.712,10.712,10.712h13.988c5.906,0,10.712-4.806,10.712-10.712V173.21 c0-7.321-2.263-18.787-5.043-25.558l-1.705-4.153h1.294c5.906,0,10.712-4.806,10.712-10.712v-5.996 C201.557,121.732,198.067,118.059,193.26,118.059z M28.698,137.681l15.978-38.918c1.79-4.36,7.11-7.928,11.823-7.928h88.418 c4.713,0,10.033,3.567,11.823,7.928l15.978,38.918c1.789,4.36-0.602,7.928-5.315,7.928H34.014 C29.3,145.608,26.909,142.041,28.698,137.681z M64.365,186.908c0,2.357-1.929,4.284-4.284,4.284H29.729 c-2.357,0-4.285-1.928-4.285-4.284v-14.566c0-2.356,1.928-4.284,4.285-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z M175.684,186.908c0,2.357-1.929,4.284-4.284,4.284h-30.352c-2.355,0-4.284-1.928-4.284-4.284v-14.566 c0-2.356,1.929-4.284,4.284-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z"></path>
+                    <path d="M259.125,37.486H208.39c-7.388,0-13.398,6.011-13.398,13.398v50.736c0,7.388,6.011,13.399,13.398,13.399h20.367v113.872 c0,2.762,2.238,5,5,5c2.762,0,5-2.238,5-5V115.02h20.368c7.388,0,13.398-6.011,13.398-13.399V50.885 C272.523,43.497,266.513,37.486,259.125,37.486z M247.634,79.553c-2.918,2.627-7.216,3.959-12.774,3.959h-7.347 c-0.882,0-1.6,0.719-1.6,1.601v12.389c0,1.346-1.095,2.44-2.441,2.44h-5.564c-1.347,0-2.441-1.095-2.441-2.44V55.007 c0-1.347,1.095-2.442,2.441-2.442h14.016c9.285,0,12.751,1.399,15.599,3.816c3.004,2.549,4.526,6.453,4.526,11.606 C252.048,73.022,250.564,76.912,247.634,79.553z"></path> 
+                    <path d="M239.681,62.825c-1.356-1.024-3.755-1.544-7.129-1.544h-5.039c-0.882,0-1.6,0.718-1.6,1.599v10.182 c0,0.881,0.718,1.599,1.6,1.599h3.019c1.109,0,2.901-0.082,3.994-0.183c1.061-0.097,4.056-0.531,5.155-1.361 c1.319-0.998,1.988-2.724,1.988-5.129C241.669,65.56,241,63.823,239.681,62.825z"></path>
+                  </svg>                      
+                  <span class="item-text">Available</span>
+                </li>
+                <li class="card-item flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.062 0 8.25 8.25 0 0 0-11.667 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.204 3.182a6 6 0 0 1 8.486 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0 3.75 3.75 0 0 0-5.304 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182a1.5 1.5 0 0 1 2.122 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0l-.53-.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="item-text">Free</span>
+                </li>
+              </ul>
+          
+              <div class="card-meta flex flex-wrap justify-between items-center gap-4">
+                <div class="flex flex-col justify-start">
+                  <span class="meta-title text-start text-gray-500">Price</span>
+                  <div>
+                    <span class="meta-text text-xl font-medium">৳25,000</span>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-end">
+                  <span class="meta-title text-end text-gray-500">Type</span>
+                  <div class="">
+                    <span class="meta-text text-xl font-medium">Convention Hall</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li> 
+
+        <li>
+          <div class="property-card relative rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+            <figure class="card-banner relative">
+              <img src="{% static 'images/venues/venue5.png' %}" alt="Convention Hall" loading="lazy" class="w-full h-64">
+            </figure>
+          
+            <div class="card-content p-6">
+              <div class="min-h-24">
+                <h3 class="h3 text-xl font-semibold mb-2">
+                  <a href="#" class="card-title transition-colors duration-300 hover:text-green-600">RM Convention Hall</a>
+                </h3>
+                <div class="mb-5 flex justify-between">
+                  <p class="">Badurtola, Bahaddarhat, Chittagong</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+          
+              <ul class="card-list flex flex-wrap justify-between gap-x-4 gap-y-2 py-4 border-t border-b border-gray-300 mb-6">
+                <li class="card-item flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clip-rule="evenodd" />
+                    <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
+                  </svg>
+                  <span class="item-text">1200</span>
+                </li>
+                <li class="card-item flex items-center gap-2">
+                  <svg fill="currentColor" class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.523 272.523"> 
+                    <path d="M193.26,118.059c-0.877,0-1.777,0.126-2.677,0.373l-10.172,2.802L169.85,95.504c-2.993-7.289-11.838-13.22-19.717-13.22 h-98.85c-7.88,0-16.724,5.931-19.716,13.22l-10.548,25.694l-10.046-2.767c-0.899-0.247-1.799-0.373-2.676-0.373 c-4.808,0-8.297,3.673-8.297,8.732v5.996c0,5.906,4.806,10.712,10.712,10.712h1.151l-1.705,4.153 c-2.78,6.77-5.043,18.236-5.043,25.558v51.115c0,5.906,4.806,10.712,10.712,10.712h13.99c5.906,0,10.712-4.806,10.712-10.712 v-12.764h120.357v12.764c0,5.906,4.806,10.712,10.712,10.712h13.988c5.906,0,10.712-4.806,10.712-10.712V173.21 c0-7.321-2.263-18.787-5.043-25.558l-1.705-4.153h1.294c5.906,0,10.712-4.806,10.712-10.712v-5.996 C201.557,121.732,198.067,118.059,193.26,118.059z M28.698,137.681l15.978-38.918c1.79-4.36,7.11-7.928,11.823-7.928h88.418 c4.713,0,10.033,3.567,11.823,7.928l15.978,38.918c1.789,4.36-0.602,7.928-5.315,7.928H34.014 C29.3,145.608,26.909,142.041,28.698,137.681z M64.365,186.908c0,2.357-1.929,4.284-4.284,4.284H29.729 c-2.357,0-4.285-1.928-4.285-4.284v-14.566c0-2.356,1.928-4.284,4.285-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z M175.684,186.908c0,2.357-1.929,4.284-4.284,4.284h-30.352c-2.355,0-4.284-1.928-4.284-4.284v-14.566 c0-2.356,1.929-4.284,4.284-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z"></path>
+                    <path d="M259.125,37.486H208.39c-7.388,0-13.398,6.011-13.398,13.398v50.736c0,7.388,6.011,13.399,13.398,13.399h20.367v113.872 c0,2.762,2.238,5,5,5c2.762,0,5-2.238,5-5V115.02h20.368c7.388,0,13.398-6.011,13.398-13.399V50.885 C272.523,43.497,266.513,37.486,259.125,37.486z M247.634,79.553c-2.918,2.627-7.216,3.959-12.774,3.959h-7.347 c-0.882,0-1.6,0.719-1.6,1.601v12.389c0,1.346-1.095,2.44-2.441,2.44h-5.564c-1.347,0-2.441-1.095-2.441-2.44V55.007 c0-1.347,1.095-2.442,2.441-2.442h14.016c9.285,0,12.751,1.399,15.599,3.816c3.004,2.549,4.526,6.453,4.526,11.606 C252.048,73.022,250.564,76.912,247.634,79.553z"></path> 
+                    <path d="M239.681,62.825c-1.356-1.024-3.755-1.544-7.129-1.544h-5.039c-0.882,0-1.6,0.718-1.6,1.599v10.182 c0,0.881,0.718,1.599,1.6,1.599h3.019c1.109,0,2.901-0.082,3.994-0.183c1.061-0.097,4.056-0.531,5.155-1.361 c1.319-0.998,1.988-2.724,1.988-5.129C241.669,65.56,241,63.823,239.681,62.825z"></path>
+                  </svg>                      
+                  <span class="item-text">Available</span>
+                </li>
+                <li class="card-item flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.062 0 8.25 8.25 0 0 0-11.667 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.204 3.182a6 6 0 0 1 8.486 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0 3.75 3.75 0 0 0-5.304 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182a1.5 1.5 0 0 1 2.122 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0l-.53-.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="item-text">Free</span>
+                </li>
+              </ul>
+          
+              <div class="card-meta flex flex-wrap justify-between items-center gap-4">
+                <div class="flex flex-col justify-start">
+                  <span class="meta-title text-start text-gray-500">Price</span>
+                  <div>
+                    <span class="meta-text text-xl font-medium">৳25,000</span>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-end">
+                  <span class="meta-title text-end text-gray-500">Type</span>
+                  <div class="">
+                    <span class="meta-text text-xl font-medium">Convention Hall</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li> 
+
+        <li>
+          <div class="property-card relative rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+            <figure class="card-banner relative">
+              <img src="{% static 'images/venues/venue6.png' %}" alt="Convention Hall" loading="lazy" class="w-full h-64">
+            </figure>
+          
+            <div class="card-content p-6">
+              <div class="min-h-24">
+                <h3 class="h3 text-xl font-semibold mb-2">
+                  <a href="#" class="card-title transition-colors duration-300 hover:text-green-600">Meera Convention Hall</a>
+                </h3>
+                <div class="mb-5 flex justify-between">
+                  <p class="">Badurtola, Bahaddarhat, Chittagong</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+          
+              <ul class="card-list flex flex-wrap justify-between gap-x-4 gap-y-2 py-4 border-t border-b border-gray-300 mb-6">
+                <li class="card-item flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clip-rule="evenodd" />
+                    <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
+                  </svg>
+                  <span class="item-text">1200</span>
+                </li>
+                <li class="card-item flex items-center gap-2">
+                  <svg fill="currentColor" class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.523 272.523"> 
+                    <path d="M193.26,118.059c-0.877,0-1.777,0.126-2.677,0.373l-10.172,2.802L169.85,95.504c-2.993-7.289-11.838-13.22-19.717-13.22 h-98.85c-7.88,0-16.724,5.931-19.716,13.22l-10.548,25.694l-10.046-2.767c-0.899-0.247-1.799-0.373-2.676-0.373 c-4.808,0-8.297,3.673-8.297,8.732v5.996c0,5.906,4.806,10.712,10.712,10.712h1.151l-1.705,4.153 c-2.78,6.77-5.043,18.236-5.043,25.558v51.115c0,5.906,4.806,10.712,10.712,10.712h13.99c5.906,0,10.712-4.806,10.712-10.712 v-12.764h120.357v12.764c0,5.906,4.806,10.712,10.712,10.712h13.988c5.906,0,10.712-4.806,10.712-10.712V173.21 c0-7.321-2.263-18.787-5.043-25.558l-1.705-4.153h1.294c5.906,0,10.712-4.806,10.712-10.712v-5.996 C201.557,121.732,198.067,118.059,193.26,118.059z M28.698,137.681l15.978-38.918c1.79-4.36,7.11-7.928,11.823-7.928h88.418 c4.713,0,10.033,3.567,11.823,7.928l15.978,38.918c1.789,4.36-0.602,7.928-5.315,7.928H34.014 C29.3,145.608,26.909,142.041,28.698,137.681z M64.365,186.908c0,2.357-1.929,4.284-4.284,4.284H29.729 c-2.357,0-4.285-1.928-4.285-4.284v-14.566c0-2.356,1.928-4.284,4.285-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z M175.684,186.908c0,2.357-1.929,4.284-4.284,4.284h-30.352c-2.355,0-4.284-1.928-4.284-4.284v-14.566 c0-2.356,1.929-4.284,4.284-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z"></path>
+                    <path d="M259.125,37.486H208.39c-7.388,0-13.398,6.011-13.398,13.398v50.736c0,7.388,6.011,13.399,13.398,13.399h20.367v113.872 c0,2.762,2.238,5,5,5c2.762,0,5-2.238,5-5V115.02h20.368c7.388,0,13.398-6.011,13.398-13.399V50.885 C272.523,43.497,266.513,37.486,259.125,37.486z M247.634,79.553c-2.918,2.627-7.216,3.959-12.774,3.959h-7.347 c-0.882,0-1.6,0.719-1.6,1.601v12.389c0,1.346-1.095,2.44-2.441,2.44h-5.564c-1.347,0-2.441-1.095-2.441-2.44V55.007 c0-1.347,1.095-2.442,2.441-2.442h14.016c9.285,0,12.751,1.399,15.599,3.816c3.004,2.549,4.526,6.453,4.526,11.606 C252.048,73.022,250.564,76.912,247.634,79.553z"></path> 
+                    <path d="M239.681,62.825c-1.356-1.024-3.755-1.544-7.129-1.544h-5.039c-0.882,0-1.6,0.718-1.6,1.599v10.182 c0,0.881,0.718,1.599,1.6,1.599h3.019c1.109,0,2.901-0.082,3.994-0.183c1.061-0.097,4.056-0.531,5.155-1.361 c1.319-0.998,1.988-2.724,1.988-5.129C241.669,65.56,241,63.823,239.681,62.825z"></path>
+                  </svg>                      
+                  <span class="item-text">Available</span>
+                </li>
+                <li class="card-item flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.062 0 8.25 8.25 0 0 0-11.667 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.204 3.182a6 6 0 0 1 8.486 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0 3.75 3.75 0 0 0-5.304 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182a1.5 1.5 0 0 1 2.122 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0l-.53-.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                  </svg>
+                  <span class="item-text">Free</span>
+                </li>
+              </ul>
+          
+              <div class="card-meta flex flex-wrap justify-between items-center gap-4">
+                <div class="flex flex-col justify-start">
+                  <span class="meta-title text-start text-gray-500">Price</span>
+                  <div>
+                    <span class="meta-text text-xl font-medium">৳25,000</span>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-end">
+                  <span class="meta-title text-end text-gray-500">Type</span>
+                  <div class="">
+                    <span class="meta-text text-xl font-medium">Convention Hall</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li> 
+
+
+
+    </ul>
+  </div>
+  
+  
+  <div class="Partners container py-16">
+
+    <h1 class="flex justify-center text-4xl font-semibold mb-8">OUR TRUSTED PARTNERS</h1>
+
+
+    <div class="flex justify-between">
+      <!-- Dior -->
+      <div class="w-36 h-36 rounded-lg shadow-xl">
+          <img src={% static 'images/partners/dior-logo.png' %} alt="Prada Logo" class="h-full w-full rounded-lg object-cover" />
       </div>
 
-      <div class="Venues container py-16">
+      <!-- Leica -->
+      <div class="w-36 h-36 rounded-lg shadow-xl">
+          <img src={% static 'images/partners/leica-logo.png' %} alt="Prada Logo" class="h-full w-full rounded-lg object-cover" />
+      </div>
 
-        <h1 class="flex justify-center text-4xl font-semibold mb-8">OUR VENUES</h1>
+      <!-- Prada -->
+      <div class="w-36 h-36 rounded-lg shadow-xl">
+          <img src={% static 'images/partners/prada-logo.png' %} alt="Prada Logo" class="h-full w-full rounded-lg object-cover" />
+      </div>
 
-        <ul class="property-list grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Vogue -->
+      <div class="w-36 h-36 rounded-lg shadow-xl">
+          <img src={% static 'images/partners/vogue-logo.png' %} alt="Prada Logo" class="h-full w-full rounded-lg object-cover" />
+      </div>
 
-            <li>
-              <div class="property-card relative rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
-                <figure class="card-banner relative ">
-                  <img src="{% static 'images/venues/venue1.png' %}" alt="Convention Hall" loading="lazy" class="w-full h-64">
-                </figure>
-              
-                <div class="card-content p-6">
-                  <div class="min-h-24">
-                    <h3 class="h3 text-xl font-semibold mb-2">
-                      <a href={% url 'venue_page' %} class="card-title transition-colors duration-300 hover:text-green-600">KB Convention Hall</a>
-                    </h3>
-                    <div class="mb-5 flex justify-between">
-                      <p class="">Badurtola, Bahaddarhat, Chittagong</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </div>
-              
-                  <ul class="card-list flex flex-wrap justify-between gap-x-4 gap-y-2 py-4 border-t border-b border-gray-300 mb-6">
-                    <li class="card-item flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clip-rule="evenodd" />
-                        <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
-                      </svg>
-                      <span class="item-text">1200</span>
-                    </li>
-                    <li class="card-item flex items-center gap-2">
-                      <svg fill="currentColor" class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.523 272.523"> 
-                        <path d="M193.26,118.059c-0.877,0-1.777,0.126-2.677,0.373l-10.172,2.802L169.85,95.504c-2.993-7.289-11.838-13.22-19.717-13.22 h-98.85c-7.88,0-16.724,5.931-19.716,13.22l-10.548,25.694l-10.046-2.767c-0.899-0.247-1.799-0.373-2.676-0.373 c-4.808,0-8.297,3.673-8.297,8.732v5.996c0,5.906,4.806,10.712,10.712,10.712h1.151l-1.705,4.153 c-2.78,6.77-5.043,18.236-5.043,25.558v51.115c0,5.906,4.806,10.712,10.712,10.712h13.99c5.906,0,10.712-4.806,10.712-10.712 v-12.764h120.357v12.764c0,5.906,4.806,10.712,10.712,10.712h13.988c5.906,0,10.712-4.806,10.712-10.712V173.21 c0-7.321-2.263-18.787-5.043-25.558l-1.705-4.153h1.294c5.906,0,10.712-4.806,10.712-10.712v-5.996 C201.557,121.732,198.067,118.059,193.26,118.059z M28.698,137.681l15.978-38.918c1.79-4.36,7.11-7.928,11.823-7.928h88.418 c4.713,0,10.033,3.567,11.823,7.928l15.978,38.918c1.789,4.36-0.602,7.928-5.315,7.928H34.014 C29.3,145.608,26.909,142.041,28.698,137.681z M64.365,186.908c0,2.357-1.929,4.284-4.284,4.284H29.729 c-2.357,0-4.285-1.928-4.285-4.284v-14.566c0-2.356,1.928-4.284,4.285-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z M175.684,186.908c0,2.357-1.929,4.284-4.284,4.284h-30.352c-2.355,0-4.284-1.928-4.284-4.284v-14.566 c0-2.356,1.929-4.284,4.284-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z"></path>
-                        <path d="M259.125,37.486H208.39c-7.388,0-13.398,6.011-13.398,13.398v50.736c0,7.388,6.011,13.399,13.398,13.399h20.367v113.872 c0,2.762,2.238,5,5,5c2.762,0,5-2.238,5-5V115.02h20.368c7.388,0,13.398-6.011,13.398-13.399V50.885 C272.523,43.497,266.513,37.486,259.125,37.486z M247.634,79.553c-2.918,2.627-7.216,3.959-12.774,3.959h-7.347 c-0.882,0-1.6,0.719-1.6,1.601v12.389c0,1.346-1.095,2.44-2.441,2.44h-5.564c-1.347,0-2.441-1.095-2.441-2.44V55.007 c0-1.347,1.095-2.442,2.441-2.442h14.016c9.285,0,12.751,1.399,15.599,3.816c3.004,2.549,4.526,6.453,4.526,11.606 C252.048,73.022,250.564,76.912,247.634,79.553z"></path> 
-                        <path d="M239.681,62.825c-1.356-1.024-3.755-1.544-7.129-1.544h-5.039c-0.882,0-1.6,0.718-1.6,1.599v10.182 c0,0.881,0.718,1.599,1.6,1.599h3.019c1.109,0,2.901-0.082,3.994-0.183c1.061-0.097,4.056-0.531,5.155-1.361 c1.319-0.998,1.988-2.724,1.988-5.129C241.669,65.56,241,63.823,239.681,62.825z"></path>
-                      </svg>                      
-                      <span class="item-text">Available</span>
-                    </li>
-                    <li class="card-item flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.062 0 8.25 8.25 0 0 0-11.667 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.204 3.182a6 6 0 0 1 8.486 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0 3.75 3.75 0 0 0-5.304 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182a1.5 1.5 0 0 1 2.122 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0l-.53-.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                      </svg>
-                      <span class="item-text">Free</span>
-                    </li>
-                  </ul>
-              
-                  <div class="card-meta flex flex-wrap justify-between items-center gap-4">
-                    <div class="flex flex-col justify-start">
-                      <span class="meta-title text-start text-gray-500">Price</span>
-                      <div>
-                        <span class="meta-text text-xl font-medium">৳25,000</span>
-                      </div>
-                    </div>
-                    <div class="flex flex-col justify-end">
-                      <span class="meta-title text-end text-gray-500">Type</span>
-                      <div class="">
-                        <span class="meta-text text-xl font-medium">Convention Hall</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>  
-            
-            <li>
-              <div class="property-card relative rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
-                <figure class="card-banner relative">
-                  <img src="{% static 'images/venues/venue2.png' %}" alt="Convention Hall" loading="lazy" class="w-full h-64">
-                </figure>
-              
-                <div class="card-content p-6">
-                  <div class="min-h-24">
-                    <h3 class="h3 text-xl font-semibold mb-2">
-                      <a href="#" class="card-title transition-colors duration-300 hover:text-green-600">Matita Convention Hall</a>
-                    </h3>
-                    <div class="mb-5 flex justify-between">
-                      <p class="">Badurtola, Bahaddarhat, Chittagong</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </div>
-              
-                  <ul class="card-list flex flex-wrap justify-between gap-x-4 gap-y-2 py-4 border-t border-b border-gray-300 mb-6">
-                    <li class="card-item flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clip-rule="evenodd" />
-                        <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
-                      </svg>
-                      <span class="item-text">1200</span>
-                    </li>
-                    <li class="card-item flex items-center gap-2">
-                      <svg fill="currentColor" class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.523 272.523"> 
-                        <path d="M193.26,118.059c-0.877,0-1.777,0.126-2.677,0.373l-10.172,2.802L169.85,95.504c-2.993-7.289-11.838-13.22-19.717-13.22 h-98.85c-7.88,0-16.724,5.931-19.716,13.22l-10.548,25.694l-10.046-2.767c-0.899-0.247-1.799-0.373-2.676-0.373 c-4.808,0-8.297,3.673-8.297,8.732v5.996c0,5.906,4.806,10.712,10.712,10.712h1.151l-1.705,4.153 c-2.78,6.77-5.043,18.236-5.043,25.558v51.115c0,5.906,4.806,10.712,10.712,10.712h13.99c5.906,0,10.712-4.806,10.712-10.712 v-12.764h120.357v12.764c0,5.906,4.806,10.712,10.712,10.712h13.988c5.906,0,10.712-4.806,10.712-10.712V173.21 c0-7.321-2.263-18.787-5.043-25.558l-1.705-4.153h1.294c5.906,0,10.712-4.806,10.712-10.712v-5.996 C201.557,121.732,198.067,118.059,193.26,118.059z M28.698,137.681l15.978-38.918c1.79-4.36,7.11-7.928,11.823-7.928h88.418 c4.713,0,10.033,3.567,11.823,7.928l15.978,38.918c1.789,4.36-0.602,7.928-5.315,7.928H34.014 C29.3,145.608,26.909,142.041,28.698,137.681z M64.365,186.908c0,2.357-1.929,4.284-4.284,4.284H29.729 c-2.357,0-4.285-1.928-4.285-4.284v-14.566c0-2.356,1.928-4.284,4.285-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z M175.684,186.908c0,2.357-1.929,4.284-4.284,4.284h-30.352c-2.355,0-4.284-1.928-4.284-4.284v-14.566 c0-2.356,1.929-4.284,4.284-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z"></path>
-                        <path d="M259.125,37.486H208.39c-7.388,0-13.398,6.011-13.398,13.398v50.736c0,7.388,6.011,13.399,13.398,13.399h20.367v113.872 c0,2.762,2.238,5,5,5c2.762,0,5-2.238,5-5V115.02h20.368c7.388,0,13.398-6.011,13.398-13.399V50.885 C272.523,43.497,266.513,37.486,259.125,37.486z M247.634,79.553c-2.918,2.627-7.216,3.959-12.774,3.959h-7.347 c-0.882,0-1.6,0.719-1.6,1.601v12.389c0,1.346-1.095,2.44-2.441,2.44h-5.564c-1.347,0-2.441-1.095-2.441-2.44V55.007 c0-1.347,1.095-2.442,2.441-2.442h14.016c9.285,0,12.751,1.399,15.599,3.816c3.004,2.549,4.526,6.453,4.526,11.606 C252.048,73.022,250.564,76.912,247.634,79.553z"></path> 
-                        <path d="M239.681,62.825c-1.356-1.024-3.755-1.544-7.129-1.544h-5.039c-0.882,0-1.6,0.718-1.6,1.599v10.182 c0,0.881,0.718,1.599,1.6,1.599h3.019c1.109,0,2.901-0.082,3.994-0.183c1.061-0.097,4.056-0.531,5.155-1.361 c1.319-0.998,1.988-2.724,1.988-5.129C241.669,65.56,241,63.823,239.681,62.825z"></path>
-                      </svg>                      
-                      <span class="item-text">Available</span>
-                    </li>
-                    <li class="card-item flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.062 0 8.25 8.25 0 0 0-11.667 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.204 3.182a6 6 0 0 1 8.486 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0 3.75 3.75 0 0 0-5.304 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182a1.5 1.5 0 0 1 2.122 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0l-.53-.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                      </svg>
-                      <span class="item-text">Free</span>
-                    </li>
-                  </ul>
-              
-                  <div class="card-meta flex flex-wrap justify-between items-center gap-4">
-                    <div class="flex flex-col justify-start">
-                      <span class="meta-title text-start text-gray-500">Price</span>
-                      <div>
-                        <span class="meta-text text-xl font-medium">৳250,000</span>
-                      </div>
-                    </div>
-                    <div class="flex flex-col justify-end">
-                      <span class="meta-title text-end text-gray-500">Type</span>
-                      <div class="">
-                        <span class="meta-text text-xl font-medium">Convention Hall</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li> 
+      <!-- Mac -->
+      <div class="w-36 h-36 rounded-lg shadow-xl">
+          <img src={% static 'images/partners/mac-logo.png' %} alt="Prada Logo" class="h-full w-full rounded-lg object-cover" />
+      </div>
 
-            <li>
-              <div class="property-card relative rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
-                <figure class="card-banner relative">
-                  <img src="{% static 'images/venues/venue3.png' %}" alt="Convention Hall" loading="lazy" class="w-full h-64">
-                </figure>
-              
-                <div class="card-content p-6">
-                  <div class="min-h-24">
-                    <h3 class="h3 text-xl font-semibold mb-2">
-                      <a href="#" class="card-title transition-colors duration-300 hover:text-green-600">RB Convention Hall</a>
-                    </h3>
-                    <div class="mb-5 flex justify-between">
-                      <p class="">Badurtola, Bahaddarhat, Chittagong</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </div>
-              
-                  <ul class="card-list flex flex-wrap justify-between gap-x-4 gap-y-2 py-4 border-t border-b border-gray-300 mb-6">
-                    <li class="card-item flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clip-rule="evenodd" />
-                        <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
-                      </svg>
-                      <span class="item-text">1200</span>
-                    </li>
-                    <li class="card-item flex items-center gap-2">
-                      <svg fill="currentColor" class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.523 272.523"> 
-                        <path d="M193.26,118.059c-0.877,0-1.777,0.126-2.677,0.373l-10.172,2.802L169.85,95.504c-2.993-7.289-11.838-13.22-19.717-13.22 h-98.85c-7.88,0-16.724,5.931-19.716,13.22l-10.548,25.694l-10.046-2.767c-0.899-0.247-1.799-0.373-2.676-0.373 c-4.808,0-8.297,3.673-8.297,8.732v5.996c0,5.906,4.806,10.712,10.712,10.712h1.151l-1.705,4.153 c-2.78,6.77-5.043,18.236-5.043,25.558v51.115c0,5.906,4.806,10.712,10.712,10.712h13.99c5.906,0,10.712-4.806,10.712-10.712 v-12.764h120.357v12.764c0,5.906,4.806,10.712,10.712,10.712h13.988c5.906,0,10.712-4.806,10.712-10.712V173.21 c0-7.321-2.263-18.787-5.043-25.558l-1.705-4.153h1.294c5.906,0,10.712-4.806,10.712-10.712v-5.996 C201.557,121.732,198.067,118.059,193.26,118.059z M28.698,137.681l15.978-38.918c1.79-4.36,7.11-7.928,11.823-7.928h88.418 c4.713,0,10.033,3.567,11.823,7.928l15.978,38.918c1.789,4.36-0.602,7.928-5.315,7.928H34.014 C29.3,145.608,26.909,142.041,28.698,137.681z M64.365,186.908c0,2.357-1.929,4.284-4.284,4.284H29.729 c-2.357,0-4.285-1.928-4.285-4.284v-14.566c0-2.356,1.928-4.284,4.285-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z M175.684,186.908c0,2.357-1.929,4.284-4.284,4.284h-30.352c-2.355,0-4.284-1.928-4.284-4.284v-14.566 c0-2.356,1.929-4.284,4.284-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z"></path>
-                        <path d="M259.125,37.486H208.39c-7.388,0-13.398,6.011-13.398,13.398v50.736c0,7.388,6.011,13.399,13.398,13.399h20.367v113.872 c0,2.762,2.238,5,5,5c2.762,0,5-2.238,5-5V115.02h20.368c7.388,0,13.398-6.011,13.398-13.399V50.885 C272.523,43.497,266.513,37.486,259.125,37.486z M247.634,79.553c-2.918,2.627-7.216,3.959-12.774,3.959h-7.347 c-0.882,0-1.6,0.719-1.6,1.601v12.389c0,1.346-1.095,2.44-2.441,2.44h-5.564c-1.347,0-2.441-1.095-2.441-2.44V55.007 c0-1.347,1.095-2.442,2.441-2.442h14.016c9.285,0,12.751,1.399,15.599,3.816c3.004,2.549,4.526,6.453,4.526,11.606 C252.048,73.022,250.564,76.912,247.634,79.553z"></path> 
-                        <path d="M239.681,62.825c-1.356-1.024-3.755-1.544-7.129-1.544h-5.039c-0.882,0-1.6,0.718-1.6,1.599v10.182 c0,0.881,0.718,1.599,1.6,1.599h3.019c1.109,0,2.901-0.082,3.994-0.183c1.061-0.097,4.056-0.531,5.155-1.361 c1.319-0.998,1.988-2.724,1.988-5.129C241.669,65.56,241,63.823,239.681,62.825z"></path>
-                      </svg>                      
-                      <span class="item-text">Available</span>
-                    </li>
-                    <li class="card-item flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.062 0 8.25 8.25 0 0 0-11.667 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.204 3.182a6 6 0 0 1 8.486 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0 3.75 3.75 0 0 0-5.304 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182a1.5 1.5 0 0 1 2.122 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0l-.53-.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                      </svg>
-                      <span class="item-text">Free</span>
-                    </li>
-                  </ul>
-              
-                  <div class="card-meta flex flex-wrap justify-between items-center gap-4">
-                    <div class="flex flex-col justify-start">
-                      <span class="meta-title text-start text-gray-500">Price</span>
-                      <div>
-                        <span class="meta-text text-xl font-medium">৳25,000</span>
-                      </div>
-                    </div>
-                    <div class="flex flex-col justify-end">
-                      <span class="meta-title text-end text-gray-500">Type</span>
-                      <div class="">
-                        <span class="meta-text text-xl font-medium">Convention Hall</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li> 
+      <!-- Loreal -->
+      <div class="w-36 h-36 rounded-lg shadow-xl">
+          <img src={% static 'images/partners/loreal-logo.png' %} alt="Prada Logo" class="h-full w-full rounded-lg object-cover" />
+      </div>
+    </div>
+  </div>
 
-            <li>
-              <div class="property-card relative rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
-                <figure class="card-banner relative">
-                  <img src="{% static 'images/venues/venue4.png' %}" alt="Convention Hall" loading="lazy" class="w-full h-64">
-                </figure>
-              
-                <div class="card-content p-6">
-                  <div class="min-h-24">
-                    <h3 class="h3 text-xl font-semibold mb-2">
-                      <a href="#" class="card-title transition-colors duration-300 hover:text-green-600">SB Convention Hall</a>
-                    </h3>
-                    <div class="mb-5 flex justify-between">
-                      <p class="">Badurtola, Bahaddarhat, Chittagong</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </div>
-              
-                  <ul class="card-list flex flex-wrap justify-between gap-x-4 gap-y-2 py-4 border-t border-b border-gray-300 mb-6">
-                    <li class="card-item flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clip-rule="evenodd" />
-                        <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
-                      </svg>
-                      <span class="item-text">1200</span>
-                    </li>
-                    <li class="card-item flex items-center gap-2">
-                      <svg fill="currentColor" class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.523 272.523"> 
-                        <path d="M193.26,118.059c-0.877,0-1.777,0.126-2.677,0.373l-10.172,2.802L169.85,95.504c-2.993-7.289-11.838-13.22-19.717-13.22 h-98.85c-7.88,0-16.724,5.931-19.716,13.22l-10.548,25.694l-10.046-2.767c-0.899-0.247-1.799-0.373-2.676-0.373 c-4.808,0-8.297,3.673-8.297,8.732v5.996c0,5.906,4.806,10.712,10.712,10.712h1.151l-1.705,4.153 c-2.78,6.77-5.043,18.236-5.043,25.558v51.115c0,5.906,4.806,10.712,10.712,10.712h13.99c5.906,0,10.712-4.806,10.712-10.712 v-12.764h120.357v12.764c0,5.906,4.806,10.712,10.712,10.712h13.988c5.906,0,10.712-4.806,10.712-10.712V173.21 c0-7.321-2.263-18.787-5.043-25.558l-1.705-4.153h1.294c5.906,0,10.712-4.806,10.712-10.712v-5.996 C201.557,121.732,198.067,118.059,193.26,118.059z M28.698,137.681l15.978-38.918c1.79-4.36,7.11-7.928,11.823-7.928h88.418 c4.713,0,10.033,3.567,11.823,7.928l15.978,38.918c1.789,4.36-0.602,7.928-5.315,7.928H34.014 C29.3,145.608,26.909,142.041,28.698,137.681z M64.365,186.908c0,2.357-1.929,4.284-4.284,4.284H29.729 c-2.357,0-4.285-1.928-4.285-4.284v-14.566c0-2.356,1.928-4.284,4.285-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z M175.684,186.908c0,2.357-1.929,4.284-4.284,4.284h-30.352c-2.355,0-4.284-1.928-4.284-4.284v-14.566 c0-2.356,1.929-4.284,4.284-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z"></path>
-                        <path d="M259.125,37.486H208.39c-7.388,0-13.398,6.011-13.398,13.398v50.736c0,7.388,6.011,13.399,13.398,13.399h20.367v113.872 c0,2.762,2.238,5,5,5c2.762,0,5-2.238,5-5V115.02h20.368c7.388,0,13.398-6.011,13.398-13.399V50.885 C272.523,43.497,266.513,37.486,259.125,37.486z M247.634,79.553c-2.918,2.627-7.216,3.959-12.774,3.959h-7.347 c-0.882,0-1.6,0.719-1.6,1.601v12.389c0,1.346-1.095,2.44-2.441,2.44h-5.564c-1.347,0-2.441-1.095-2.441-2.44V55.007 c0-1.347,1.095-2.442,2.441-2.442h14.016c9.285,0,12.751,1.399,15.599,3.816c3.004,2.549,4.526,6.453,4.526,11.606 C252.048,73.022,250.564,76.912,247.634,79.553z"></path> 
-                        <path d="M239.681,62.825c-1.356-1.024-3.755-1.544-7.129-1.544h-5.039c-0.882,0-1.6,0.718-1.6,1.599v10.182 c0,0.881,0.718,1.599,1.6,1.599h3.019c1.109,0,2.901-0.082,3.994-0.183c1.061-0.097,4.056-0.531,5.155-1.361 c1.319-0.998,1.988-2.724,1.988-5.129C241.669,65.56,241,63.823,239.681,62.825z"></path>
-                      </svg>                      
-                      <span class="item-text">Available</span>
-                    </li>
-                    <li class="card-item flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.062 0 8.25 8.25 0 0 0-11.667 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.204 3.182a6 6 0 0 1 8.486 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0 3.75 3.75 0 0 0-5.304 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182a1.5 1.5 0 0 1 2.122 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0l-.53-.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                      </svg>
-                      <span class="item-text">Free</span>
-                    </li>
-                  </ul>
-              
-                  <div class="card-meta flex flex-wrap justify-between items-center gap-4">
-                    <div class="flex flex-col justify-start">
-                      <span class="meta-title text-start text-gray-500">Price</span>
-                      <div>
-                        <span class="meta-text text-xl font-medium">৳25,000</span>
-                      </div>
-                    </div>
-                    <div class="flex flex-col justify-end">
-                      <span class="meta-title text-end text-gray-500">Type</span>
-                      <div class="">
-                        <span class="meta-text text-xl font-medium">Convention Hall</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li> 
+  <div class="Developers container py-16">
 
-            <li>
-              <div class="property-card relative rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
-                <figure class="card-banner relative">
-                  <img src="{% static 'images/venues/venue5.png' %}" alt="Convention Hall" loading="lazy" class="w-full h-64">
-                </figure>
-              
-                <div class="card-content p-6">
-                  <div class="min-h-24">
-                    <h3 class="h3 text-xl font-semibold mb-2">
-                      <a href="#" class="card-title transition-colors duration-300 hover:text-green-600">RM Convention Hall</a>
-                    </h3>
-                    <div class="mb-5 flex justify-between">
-                      <p class="">Badurtola, Bahaddarhat, Chittagong</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </div>
-              
-                  <ul class="card-list flex flex-wrap justify-between gap-x-4 gap-y-2 py-4 border-t border-b border-gray-300 mb-6">
-                    <li class="card-item flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clip-rule="evenodd" />
-                        <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
-                      </svg>
-                      <span class="item-text">1200</span>
-                    </li>
-                    <li class="card-item flex items-center gap-2">
-                      <svg fill="currentColor" class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.523 272.523"> 
-                        <path d="M193.26,118.059c-0.877,0-1.777,0.126-2.677,0.373l-10.172,2.802L169.85,95.504c-2.993-7.289-11.838-13.22-19.717-13.22 h-98.85c-7.88,0-16.724,5.931-19.716,13.22l-10.548,25.694l-10.046-2.767c-0.899-0.247-1.799-0.373-2.676-0.373 c-4.808,0-8.297,3.673-8.297,8.732v5.996c0,5.906,4.806,10.712,10.712,10.712h1.151l-1.705,4.153 c-2.78,6.77-5.043,18.236-5.043,25.558v51.115c0,5.906,4.806,10.712,10.712,10.712h13.99c5.906,0,10.712-4.806,10.712-10.712 v-12.764h120.357v12.764c0,5.906,4.806,10.712,10.712,10.712h13.988c5.906,0,10.712-4.806,10.712-10.712V173.21 c0-7.321-2.263-18.787-5.043-25.558l-1.705-4.153h1.294c5.906,0,10.712-4.806,10.712-10.712v-5.996 C201.557,121.732,198.067,118.059,193.26,118.059z M28.698,137.681l15.978-38.918c1.79-4.36,7.11-7.928,11.823-7.928h88.418 c4.713,0,10.033,3.567,11.823,7.928l15.978,38.918c1.789,4.36-0.602,7.928-5.315,7.928H34.014 C29.3,145.608,26.909,142.041,28.698,137.681z M64.365,186.908c0,2.357-1.929,4.284-4.284,4.284H29.729 c-2.357,0-4.285-1.928-4.285-4.284v-14.566c0-2.356,1.928-4.284,4.285-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z M175.684,186.908c0,2.357-1.929,4.284-4.284,4.284h-30.352c-2.355,0-4.284-1.928-4.284-4.284v-14.566 c0-2.356,1.929-4.284,4.284-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z"></path>
-                        <path d="M259.125,37.486H208.39c-7.388,0-13.398,6.011-13.398,13.398v50.736c0,7.388,6.011,13.399,13.398,13.399h20.367v113.872 c0,2.762,2.238,5,5,5c2.762,0,5-2.238,5-5V115.02h20.368c7.388,0,13.398-6.011,13.398-13.399V50.885 C272.523,43.497,266.513,37.486,259.125,37.486z M247.634,79.553c-2.918,2.627-7.216,3.959-12.774,3.959h-7.347 c-0.882,0-1.6,0.719-1.6,1.601v12.389c0,1.346-1.095,2.44-2.441,2.44h-5.564c-1.347,0-2.441-1.095-2.441-2.44V55.007 c0-1.347,1.095-2.442,2.441-2.442h14.016c9.285,0,12.751,1.399,15.599,3.816c3.004,2.549,4.526,6.453,4.526,11.606 C252.048,73.022,250.564,76.912,247.634,79.553z"></path> 
-                        <path d="M239.681,62.825c-1.356-1.024-3.755-1.544-7.129-1.544h-5.039c-0.882,0-1.6,0.718-1.6,1.599v10.182 c0,0.881,0.718,1.599,1.6,1.599h3.019c1.109,0,2.901-0.082,3.994-0.183c1.061-0.097,4.056-0.531,5.155-1.361 c1.319-0.998,1.988-2.724,1.988-5.129C241.669,65.56,241,63.823,239.681,62.825z"></path>
-                      </svg>                      
-                      <span class="item-text">Available</span>
-                    </li>
-                    <li class="card-item flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.062 0 8.25 8.25 0 0 0-11.667 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.204 3.182a6 6 0 0 1 8.486 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0 3.75 3.75 0 0 0-5.304 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182a1.5 1.5 0 0 1 2.122 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0l-.53-.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                      </svg>
-                      <span class="item-text">Free</span>
-                    </li>
-                  </ul>
-              
-                  <div class="card-meta flex flex-wrap justify-between items-center gap-4">
-                    <div class="flex flex-col justify-start">
-                      <span class="meta-title text-start text-gray-500">Price</span>
-                      <div>
-                        <span class="meta-text text-xl font-medium">৳25,000</span>
-                      </div>
-                    </div>
-                    <div class="flex flex-col justify-end">
-                      <span class="meta-title text-end text-gray-500">Type</span>
-                      <div class="">
-                        <span class="meta-text text-xl font-medium">Convention Hall</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li> 
+    <h1 class="flex justify-center text-4xl font-semibold mb-8">MEET US</h1>
 
-            <li>
-              <div class="property-card relative rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl">
-                <figure class="card-banner relative">
-                  <img src="{% static 'images/venues/venue6.png' %}" alt="Convention Hall" loading="lazy" class="w-full h-64">
-                </figure>
-              
-                <div class="card-content p-6">
-                  <div class="min-h-24">
-                    <h3 class="h3 text-xl font-semibold mb-2">
-                      <a href="#" class="card-title transition-colors duration-300 hover:text-green-600">Meera Convention Hall</a>
-                    </h3>
-                    <div class="mb-5 flex justify-between">
-                      <p class="">Badurtola, Bahaddarhat, Chittagong</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                  </div>
-              
-                  <ul class="card-list flex flex-wrap justify-between gap-x-4 gap-y-2 py-4 border-t border-b border-gray-300 mb-6">
-                    <li class="card-item flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clip-rule="evenodd" />
-                        <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
-                      </svg>
-                      <span class="item-text">1200</span>
-                    </li>
-                    <li class="card-item flex items-center gap-2">
-                      <svg fill="currentColor" class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 272.523 272.523"> 
-                        <path d="M193.26,118.059c-0.877,0-1.777,0.126-2.677,0.373l-10.172,2.802L169.85,95.504c-2.993-7.289-11.838-13.22-19.717-13.22 h-98.85c-7.88,0-16.724,5.931-19.716,13.22l-10.548,25.694l-10.046-2.767c-0.899-0.247-1.799-0.373-2.676-0.373 c-4.808,0-8.297,3.673-8.297,8.732v5.996c0,5.906,4.806,10.712,10.712,10.712h1.151l-1.705,4.153 c-2.78,6.77-5.043,18.236-5.043,25.558v51.115c0,5.906,4.806,10.712,10.712,10.712h13.99c5.906,0,10.712-4.806,10.712-10.712 v-12.764h120.357v12.764c0,5.906,4.806,10.712,10.712,10.712h13.988c5.906,0,10.712-4.806,10.712-10.712V173.21 c0-7.321-2.263-18.787-5.043-25.558l-1.705-4.153h1.294c5.906,0,10.712-4.806,10.712-10.712v-5.996 C201.557,121.732,198.067,118.059,193.26,118.059z M28.698,137.681l15.978-38.918c1.79-4.36,7.11-7.928,11.823-7.928h88.418 c4.713,0,10.033,3.567,11.823,7.928l15.978,38.918c1.789,4.36-0.602,7.928-5.315,7.928H34.014 C29.3,145.608,26.909,142.041,28.698,137.681z M64.365,186.908c0,2.357-1.929,4.284-4.284,4.284H29.729 c-2.357,0-4.285-1.928-4.285-4.284v-14.566c0-2.356,1.928-4.284,4.285-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z M175.684,186.908c0,2.357-1.929,4.284-4.284,4.284h-30.352c-2.355,0-4.284-1.928-4.284-4.284v-14.566 c0-2.356,1.929-4.284,4.284-4.284h30.352c2.355,0,4.284,1.928,4.284,4.284V186.908z"></path>
-                        <path d="M259.125,37.486H208.39c-7.388,0-13.398,6.011-13.398,13.398v50.736c0,7.388,6.011,13.399,13.398,13.399h20.367v113.872 c0,2.762,2.238,5,5,5c2.762,0,5-2.238,5-5V115.02h20.368c7.388,0,13.398-6.011,13.398-13.399V50.885 C272.523,43.497,266.513,37.486,259.125,37.486z M247.634,79.553c-2.918,2.627-7.216,3.959-12.774,3.959h-7.347 c-0.882,0-1.6,0.719-1.6,1.601v12.389c0,1.346-1.095,2.44-2.441,2.44h-5.564c-1.347,0-2.441-1.095-2.441-2.44V55.007 c0-1.347,1.095-2.442,2.441-2.442h14.016c9.285,0,12.751,1.399,15.599,3.816c3.004,2.549,4.526,6.453,4.526,11.606 C252.048,73.022,250.564,76.912,247.634,79.553z"></path> 
-                        <path d="M239.681,62.825c-1.356-1.024-3.755-1.544-7.129-1.544h-5.039c-0.882,0-1.6,0.718-1.6,1.599v10.182 c0,0.881,0.718,1.599,1.6,1.599h3.019c1.109,0,2.901-0.082,3.994-0.183c1.061-0.097,4.056-0.531,5.155-1.361 c1.319-0.998,1.988-2.724,1.988-5.129C241.669,65.56,241,63.823,239.681,62.825z"></path>
-                      </svg>                      
-                      <span class="item-text">Available</span>
-                    </li>
-                    <li class="card-item flex items-center gap-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-                        <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.062 0 8.25 8.25 0 0 0-11.667 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.204 3.182a6 6 0 0 1 8.486 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0 3.75 3.75 0 0 0-5.304 0 .75.75 0 0 1-1.06 0l-.53-.53a.75.75 0 0 1 0-1.06Zm3.182 3.182a1.5 1.5 0 0 1 2.122 0 .75.75 0 0 1 0 1.061l-.53.53a.75.75 0 0 1-1.061 0l-.53-.53a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                      </svg>
-                      <span class="item-text">Free</span>
-                    </li>
-                  </ul>
-              
-                  <div class="card-meta flex flex-wrap justify-between items-center gap-4">
-                    <div class="flex flex-col justify-start">
-                      <span class="meta-title text-start text-gray-500">Price</span>
-                      <div>
-                        <span class="meta-text text-xl font-medium">৳25,000</span>
-                      </div>
-                    </div>
-                    <div class="flex flex-col justify-end">
-                      <span class="meta-title text-end text-gray-500">Type</span>
-                      <div class="">
-                        <span class="meta-text text-xl font-medium">Convention Hall</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li> 
+    <div class="flex justify-evenly">
+      <!-- Jannatul -->
+      <div class="text-center">
+          <img src={% static 'images/devs/jannatul2.jpg' %} alt="Emily" class="w-48 h-64 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-semibold">Jannatul</h3>
+          <p class="text-gray-600 font-bold">Full Stack Developer</p>
+      </div>
+      <!-- Nusa -->
+      <div class="text-center">
+          <img src={% static 'images/devs/nusa.jpg' %} alt="Sophia" class="w-48 h-64 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-semibold">Nusa</h3>
+          <p class="text-gray-600 font-bold">Backend Developer</p>
+      </div>
+      <!-- Rafia -->
+      <div class="text-center">
+          <img src={% static 'images/devs/rafia.jpg' %} alt="Liam" class="w-48 h-64 object-cover rounded-lg mb-4">
+          <h3 class="text-xl font-semibold">Rafia</h3>
+          <p class="text-gray-600 font-bold">Frontend Developer</p>
+      </div>
+    </div>
+  </div>
 
+  <div class="statistics container py-16 border-y-2"> 
 
+    <div class="flex justify-between">
+      <!-- Events Managed -->
+      <div class="text-center">
+          <h3 class="text-5xl font-bold text-green-500">100+</h3>
+          <p class="text-gray-600 font-bold mt-2">Events Managed</p>
+      </div>
+      <!-- Happy Customers -->
+      <div class="text-center">
+          <h3 class="text-5xl font-bold text-green-500">5000+</h3>
+          <p class="text-gray-600 font-bold mt-2">Happy Customers</p>
+      </div>
+      <!-- Payment Options -->
+      <div class="text-center">
+          <h3 class="text-5xl font-bold text-green-500">10+</h3>
+          <p class="text-gray-600 font-bold mt-2">Payment Options</p>
+      </div>
+    </div>
 
+  </div>
+
+  <div class="faq container py-16">
+
+    <h1 class="flex justify-center text-4xl font-semibold mb-8">Your Burning Questions</h1>
+
+    <div class="space-y-6 max-w-4xl mx-auto ">
+      <!-- Question 1 -->
+      <div tabindex="0" class="collapse collapse-arrow border-base-300  border  bg-green-300">
+        <div class="collapse-title text-xl font-medium">How do I book an event?</div>
+        <div class="collapse-content">
+          <p>Simply choose your event club and click 'Book'!</p>
+        </div>
+      </div>
+      
+      <!-- Question 2 -->
+      <div tabindex="0" class="collapse collapse-arrow border-base-300  border  bg-green-300">
+        <div class="collapse-title text-xl font-medium">What payment methods are accepted?</div>
+        <div class="collapse-content">
+          <p>We accept Bkash, Nagad, PayPal, and more!</p>
+        </div>
+      </div>
+      
+      <!-- Question 3 -->
+      <div tabindex="0" class="collapse collapse-arrow border-base-300  border  bg-green-300">
+        <div class="collapse-title text-xl font-medium">Can I see previous reviews?</div>
+        <div class="collapse-content">
+          <p>Absolutely! Check out our review section.</p>
+        </div>
+      </div>
+      
+      <!-- Question 4 -->
+      <div tabindex="0" class="collapse collapse-arrow border-base-300  border  bg-green-300">
+        <div class="collapse-title text-xl font-medium">Is there a deposit required?</div>
+        <div class="collapse-content">
+          <p>Yes, a 25% advance is needed.</p>
+        </div>
+      </div>
+      
+      <!-- Question 5 -->
+      <div tabindex="0" class="collapse collapse-arrow border-base-300  border  bg-green-300">
+        <div class="collapse-title text-xl font-medium">What if I need to cancel?</div>
+        <div class="collapse-content">
+          <p>Contact us for cancellation policies.</p>
+        </div>
+      </div>
+      
+      
+      
+
+   
+    </div>
+
+  </div>
+
+  <div class="contact -mb-24">
+    <div class="container bg-white p-8 grid md:grid-cols-2 gap-16 items-center relative overflow-hidden shadow-md shadow-gray-500 rounded-3xl before:absolute before:right-0 before:w-[300px] before:bg-green-500 before:h-full max-md:before:hidden">
+      <div>
+        <h2 class="text-gray-800 text-3xl font-extrabold">Get In Touch</h2>
+        <p class="text-sm text-gray-500 mt-4 leading-relaxed">Have a specific inquiry or looking to explore new
+          opportunities? Our
+          experienced team is ready to engage with you.</p>
+    
+        <form>
+          <div class="space-y-4 mt-8">
+            <input type="text" placeholder="Full Name"
+              class="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none" />
+            <input type="text" placeholder="Street"
+              class="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none" />
+            <div class="grid grid-cols-2 gap-6">
+              <input type="text" placeholder="City"
+                class="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none" />
+    
+              <input type="text" placeholder="Postcode"
+                class="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none" />
+            </div>
+            <input type="number" placeholder="Phone No."
+              class="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none" />
+    
+            <input type="email" placeholder="Email"
+              class="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none" />
+    
+            <textarea placeholder="Write Message"
+              class="px-2 pt-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none"></textarea>
+          </div>
+    
+          <button type="button"
+            class="mt-8 flex items-center justify-center text-sm w-full rounded-md px-6 py-3 bg-green-600 hover:bg-green-800 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='#fff' class="mr-2"
+              viewBox="0 0 548.244 548.244">
+              <path fill-rule="evenodd"
+                d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z"
+                clip-rule="evenodd" data-original="#000000" />
+            </svg>
+            Send Message
+          </button>
+        </form>
+    
+        <ul class="mt-4 flex flex-wrap justify-center gap-6">
+          <li class="flex items-center text-green-800">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='currentColor'
+              viewBox="0 0 479.058 479.058">
+              <path
+                d="M434.146 59.882H44.912C20.146 59.882 0 80.028 0 104.794v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159L239.529 264.631 39.173 90.982a14.902 14.902 0 0 1 5.738-1.159zm0 299.411H44.912c-8.26 0-14.971-6.71-14.971-14.971V122.615l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z"
+                data-original="#000000" />
+            </svg>
+            <a href="javascript:void(0)" class="text-sm ml-4">
+              <strong>jrn.eventify@gmail.com</strong>
+            </a>
+          </li>
+          <li class="flex items-center text-green-800">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='currentColor'
+              viewBox="0 0 482.6 482.6">
+              <path
+                d="M98.339 320.8c47.6 56.9 104.9 101.7 170.3 133.4 24.9 11.8 58.2 25.8 95.3 28.2 2.3.1 4.5.2 6.8.2 24.9 0 44.9-8.6 61.2-26.3.1-.1.3-.3.4-.5 5.8-7 12.4-13.3 19.3-20 4.7-4.5 9.5-9.2 14.1-14 21.3-22.2 21.3-50.4-.2-71.9l-60.1-60.1c-10.2-10.6-22.4-16.2-35.2-16.2-12.8 0-25.1 5.6-35.6 16.1l-35.8 35.8c-3.3-1.9-6.7-3.6-9.9-5.2-4-2-7.7-3.9-11-6-32.6-20.7-62.2-47.7-90.5-82.4-14.3-18.1-23.9-33.3-30.6-48.8 9.4-8.5 18.2-17.4 26.7-26.1 3-3.1 6.1-6.2 9.2-9.3 10.8-10.8 16.6-23.3 16.6-36s-5.7-25.2-16.6-36l-29.8-29.8c-3.5-3.5-6.8-6.9-10.2-10.4-6.6-6.8-13.5-13.8-20.3-20.1-10.3-10.1-22.4-15.4-35.2-15.4-12.7 0-24.9 5.3-35.6 15.5l-37.4 37.4c-13.6 13.6-21.3 30.1-22.9 49.2-1.9 23.9 2.5 49.3 13.9 80 17.5 47.5 43.9 91.6 83.1 138.7zm-72.6-216.6c1.2-13.3 6.3-24.4 15.9-34l37.2-37.2c5.8-5.6 12.2-8.5 18.4-8.5 6.1 0 12.3 2.9 18 8.7 6.7 6.2 13 12.7 19.8 19.6 3.4 3.5 6.9 7 10.4 10.6l29.8 29.8c6.2 6.2 9.4 12.5 9.4 18.7s-3.2 12.5-9.4 18.7c-3.1 3.1-6.2 6.3-9.3 9.4-9.3 9.4-18 18.3-27.6 26.8l-.5.5c-8.3 8.3-7 16.2-5 22.2.1.3.2.5.3.8 7.7 18.5 18.4 36.1 35.1 57.1 30 37 61.6 65.7 96.4 87.8 4.3 2.8 8.9 5 13.2 7.2 4 2 7.7 3.9 11 6 .4.2.7.4 1.1.6 3.3 1.7 6.5 2.5 9.7 2.5 8 0 13.2-5.1 14.9-6.8l37.4-37.4c5.8-5.8 12.1-8.9 18.3-8.9 7.6 0 13.8 4.7 17.7 8.9l60.3 60.2c12 12 11.9 25-.3 37.7-4.2 4.5-8.6 8.8-13.3 13.3-7 6.8-14.3 13.8-20.9 21.7-11.5 12.4-25.2 18.2-42.9 18.2-1.7 0-3.5-.1-5.2-.2-32.8-2.1-63.3-14.9-86.2-25.8-62.2-30.1-116.8-72.8-162.1-127-37.3-44.9-62.4-86.7-79-131.5-10.3-27.5-14.2-49.6-12.6-69.7z"
+                data-original="#000000"></path>
+            </svg>
+            <a href="javascript:void(0)" class="text-sm ml-4">
+              <strong>018826525**</strong>
+            </a>
+          </li>
         </ul>
       </div>
-      
-      
-      <div class="Partners container py-16">
-
-        <h1 class="flex justify-center text-4xl font-semibold mb-8">OUR TRUSTED PARTNERS</h1>
-
-
-        <div class="flex justify-between">
-          <!-- Dior -->
-          <div class="w-36 h-36 rounded-lg shadow-xl">
-              <img src={% static 'images/partners/dior-logo.png' %} alt="Prada Logo" class="h-full w-full rounded-lg object-cover" />
-          </div>
-
-          <!-- Leica -->
-          <div class="w-36 h-36 rounded-lg shadow-xl">
-              <img src={% static 'images/partners/leica-logo.png' %} alt="Prada Logo" class="h-full w-full rounded-lg object-cover" />
-          </div>
-
-          <!-- Prada -->
-          <div class="w-36 h-36 rounded-lg shadow-xl">
-              <img src={% static 'images/partners/prada-logo.png' %} alt="Prada Logo" class="h-full w-full rounded-lg object-cover" />
-          </div>
-
-          <!-- Vogue -->
-          <div class="w-36 h-36 rounded-lg shadow-xl">
-              <img src={% static 'images/partners/vogue-logo.png' %} alt="Prada Logo" class="h-full w-full rounded-lg object-cover" />
-          </div>
-
-          <!-- Mac -->
-          <div class="w-36 h-36 rounded-lg shadow-xl">
-              <img src={% static 'images/partners/mac-logo.png' %} alt="Prada Logo" class="h-full w-full rounded-lg object-cover" />
-          </div>
-
-          <!-- Loreal -->
-          <div class="w-36 h-36 rounded-lg shadow-xl">
-              <img src={% static 'images/partners/loreal-logo.png' %} alt="Prada Logo" class="h-full w-full rounded-lg object-cover" />
-          </div>
-        </div>
+      <div class="z-10 relative h-full max-md:min-h-[350px]">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d325.8173606966471!2d91.72081609632265!3d22.496578968890763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30ad2777a615585d%3A0xdcf908f6e4f3a713!2sInternational%20Islamic%20University%20Chittagong!5e0!3m2!1sen!2sbd!4v1731336521703!5m2!1sen!2sbd"
+          width="600" height="450" style="border:0;"
+          class="left-0 top-0 h-full w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg" frameborder="0"
+          allowfullscreen></iframe>
       </div>
+    </div>
+  </div>
 
-      <div class="Developers container py-16">
-
-        <h1 class="flex justify-center text-4xl font-semibold mb-8">MEET US</h1>
-
-        <div class="flex justify-evenly">
-          <!-- Jannatul -->
-          <div class="text-center">
-              <img src={% static 'images/devs/jannatul2.jpg' %} alt="Emily" class="w-48 h-64 object-cover rounded-lg mb-4">
-              <h3 class="text-xl font-semibold">Jannatul</h3>
-              <p class="text-gray-600 font-bold">Full Stack Developer</p>
-          </div>
-          <!-- Nusa -->
-          <div class="text-center">
-              <img src={% static 'images/devs/nusa.jpg' %} alt="Sophia" class="w-48 h-64 object-cover rounded-lg mb-4">
-              <h3 class="text-xl font-semibold">Nusa</h3>
-              <p class="text-gray-600 font-bold">Backend Developer</p>
-          </div>
-          <!-- Rafia -->
-          <div class="text-center">
-              <img src={% static 'images/devs/rafia.jpg' %} alt="Liam" class="w-48 h-64 object-cover rounded-lg mb-4">
-              <h3 class="text-xl font-semibold">Rafia</h3>
-              <p class="text-gray-600 font-bold">Frontend Developer</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="statistics container py-16 border-y-2"> 
-
-        <div class="flex justify-between">
-          <!-- Events Managed -->
-          <div class="text-center">
-              <h3 class="text-5xl font-bold text-green-500">100+</h3>
-              <p class="text-gray-600 font-bold mt-2">Events Managed</p>
-          </div>
-          <!-- Happy Customers -->
-          <div class="text-center">
-              <h3 class="text-5xl font-bold text-green-500">5000+</h3>
-              <p class="text-gray-600 font-bold mt-2">Happy Customers</p>
-          </div>
-          <!-- Payment Options -->
-          <div class="text-center">
-              <h3 class="text-5xl font-bold text-green-500">10+</h3>
-              <p class="text-gray-600 font-bold mt-2">Payment Options</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="faq container py-16">
-
-        <h1 class="flex justify-center text-4xl font-semibold mb-8">Your Burning Questions</h1>
-
-        <div class="space-y-6 max-w-4xl mx-auto ">
-          <!-- Question 1 -->
-          <div tabindex="0" class="collapse collapse-arrow border-base-300  border  bg-green-300">
-            <div class="collapse-title text-xl font-medium">How do I book an event?</div>
-            <div class="collapse-content">
-              <p>Simply choose your event club and click 'Book'!</p>
-            </div>
-          </div>
-          
-          <!-- Question 2 -->
-          <div tabindex="0" class="collapse collapse-arrow border-base-300  border  bg-green-300">
-            <div class="collapse-title text-xl font-medium">What payment methods are accepted?</div>
-            <div class="collapse-content">
-              <p>We accept Bkash, Nagad, PayPal, and more!</p>
-            </div>
-          </div>
-          
-          <!-- Question 3 -->
-          <div tabindex="0" class="collapse collapse-arrow border-base-300  border  bg-green-300">
-            <div class="collapse-title text-xl font-medium">Can I see previous reviews?</div>
-            <div class="collapse-content">
-              <p>Absolutely! Check out our review section.</p>
-            </div>
-          </div>
-          
-          <!-- Question 4 -->
-          <div tabindex="0" class="collapse collapse-arrow border-base-300  border  bg-green-300">
-            <div class="collapse-title text-xl font-medium">Is there a deposit required?</div>
-            <div class="collapse-content">
-              <p>Yes, a 25% advance is needed.</p>
-            </div>
-          </div>
-          
-          <!-- Question 5 -->
-          <div tabindex="0" class="collapse collapse-arrow border-base-300  border  bg-green-300">
-            <div class="collapse-title text-xl font-medium">What if I need to cancel?</div>
-            <div class="collapse-content">
-              <p>Contact us for cancellation policies.</p>
-            </div>
-          </div>
-          
-          
-          
-
-          <!-- Question 2
-          <div class="p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-2">
-              What payment methods are accepted?
-            </h3>
-            <p class="text-gray-600">We accept Bkash, PayPal, and more!</p>
-          </div>
-
-          <div class="p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-2">
-              Can I see previous reviews?
-            </h3>
-            <p class="text-gray-600">
-              Absolutely! Check out our review section.
-            </p>
-          </div>
-
-          <div class="p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-2">
-              Is there a deposit required?
-            </h3>
-            <p class="text-gray-600">Yes, a 25% advance is needed.</p>
-          </div>
-
-          <div class="p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-2">
-              What if I need to cancel?
-            </h3>
-            <p class="text-gray-600">Contact us for cancellation policies.</p>
-          </div>
-
-          <div tabindex="0" class="collapse collapse-arrow border-base-300 bg-base-200 border">
-            <div class="collapse-title text-xl font-medium">Focus me to see content</div>
-            <div class="collapse-content">
-              <p>tabindex="0" attribute is necessary to make the div focusable</p>
-            </div>
-          </div>
-
-          <div tabindex="1" class="collapse collapse-arrow border-base-300 bg-base-200 border">
-            <div class="collapse-title text-xl font-medium">Focus me to see content</div>
-            <div class="collapse-content">
-              <p>tabindex="0" attribute is necessary to make the div focusable</p>
-            </div>
-          </div> -->
-
-        </div>
-
-      </div>
-
-      <div class="contact -mb-24">
-        <div class="container bg-white p-8 grid md:grid-cols-2 gap-16 items-center relative overflow-hidden shadow-md shadow-gray-500 rounded-3xl before:absolute before:right-0 before:w-[300px] before:bg-green-500 before:h-full max-md:before:hidden">
-          <div>
-            <h2 class="text-gray-800 text-3xl font-extrabold">Get In Touch</h2>
-            <p class="text-sm text-gray-500 mt-4 leading-relaxed">Have a specific inquiry or looking to explore new
-              opportunities? Our
-              experienced team is ready to engage with you.</p>
-        
-            <form>
-              <div class="space-y-4 mt-8">
-                <input type="text" placeholder="Full Name"
-                  class="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none" />
-                <input type="text" placeholder="Street"
-                  class="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none" />
-                <div class="grid grid-cols-2 gap-6">
-                  <input type="text" placeholder="City"
-                    class="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none" />
-        
-                  <input type="text" placeholder="Postcode"
-                    class="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none" />
-                </div>
-                <input type="number" placeholder="Phone No."
-                  class="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none" />
-        
-                <input type="email" placeholder="Email"
-                  class="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none" />
-        
-                <textarea placeholder="Write Message"
-                  class="px-2 pt-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none"></textarea>
-              </div>
-        
-              <button type="button"
-                class="mt-8 flex items-center justify-center text-sm w-full rounded-md px-6 py-3 bg-green-600 hover:bg-green-800 text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='#fff' class="mr-2"
-                  viewBox="0 0 548.244 548.244">
-                  <path fill-rule="evenodd"
-                    d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z"
-                    clip-rule="evenodd" data-original="#000000" />
-                </svg>
-                Send Message
-              </button>
-            </form>
-        
-            <ul class="mt-4 flex flex-wrap justify-center gap-6">
-              <li class="flex items-center text-green-800">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='currentColor'
-                  viewBox="0 0 479.058 479.058">
-                  <path
-                    d="M434.146 59.882H44.912C20.146 59.882 0 80.028 0 104.794v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159L239.529 264.631 39.173 90.982a14.902 14.902 0 0 1 5.738-1.159zm0 299.411H44.912c-8.26 0-14.971-6.71-14.971-14.971V122.615l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z"
-                    data-original="#000000" />
-                </svg>
-                <a href="javascript:void(0)" class="text-sm ml-4">
-                  <strong>jrn.eventify@gmail.com</strong>
-                </a>
-              </li>
-              <li class="flex items-center text-green-800">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill='currentColor'
-                  viewBox="0 0 482.6 482.6">
-                  <path
-                    d="M98.339 320.8c47.6 56.9 104.9 101.7 170.3 133.4 24.9 11.8 58.2 25.8 95.3 28.2 2.3.1 4.5.2 6.8.2 24.9 0 44.9-8.6 61.2-26.3.1-.1.3-.3.4-.5 5.8-7 12.4-13.3 19.3-20 4.7-4.5 9.5-9.2 14.1-14 21.3-22.2 21.3-50.4-.2-71.9l-60.1-60.1c-10.2-10.6-22.4-16.2-35.2-16.2-12.8 0-25.1 5.6-35.6 16.1l-35.8 35.8c-3.3-1.9-6.7-3.6-9.9-5.2-4-2-7.7-3.9-11-6-32.6-20.7-62.2-47.7-90.5-82.4-14.3-18.1-23.9-33.3-30.6-48.8 9.4-8.5 18.2-17.4 26.7-26.1 3-3.1 6.1-6.2 9.2-9.3 10.8-10.8 16.6-23.3 16.6-36s-5.7-25.2-16.6-36l-29.8-29.8c-3.5-3.5-6.8-6.9-10.2-10.4-6.6-6.8-13.5-13.8-20.3-20.1-10.3-10.1-22.4-15.4-35.2-15.4-12.7 0-24.9 5.3-35.6 15.5l-37.4 37.4c-13.6 13.6-21.3 30.1-22.9 49.2-1.9 23.9 2.5 49.3 13.9 80 17.5 47.5 43.9 91.6 83.1 138.7zm-72.6-216.6c1.2-13.3 6.3-24.4 15.9-34l37.2-37.2c5.8-5.6 12.2-8.5 18.4-8.5 6.1 0 12.3 2.9 18 8.7 6.7 6.2 13 12.7 19.8 19.6 3.4 3.5 6.9 7 10.4 10.6l29.8 29.8c6.2 6.2 9.4 12.5 9.4 18.7s-3.2 12.5-9.4 18.7c-3.1 3.1-6.2 6.3-9.3 9.4-9.3 9.4-18 18.3-27.6 26.8l-.5.5c-8.3 8.3-7 16.2-5 22.2.1.3.2.5.3.8 7.7 18.5 18.4 36.1 35.1 57.1 30 37 61.6 65.7 96.4 87.8 4.3 2.8 8.9 5 13.2 7.2 4 2 7.7 3.9 11 6 .4.2.7.4 1.1.6 3.3 1.7 6.5 2.5 9.7 2.5 8 0 13.2-5.1 14.9-6.8l37.4-37.4c5.8-5.8 12.1-8.9 18.3-8.9 7.6 0 13.8 4.7 17.7 8.9l60.3 60.2c12 12 11.9 25-.3 37.7-4.2 4.5-8.6 8.8-13.3 13.3-7 6.8-14.3 13.8-20.9 21.7-11.5 12.4-25.2 18.2-42.9 18.2-1.7 0-3.5-.1-5.2-.2-32.8-2.1-63.3-14.9-86.2-25.8-62.2-30.1-116.8-72.8-162.1-127-37.3-44.9-62.4-86.7-79-131.5-10.3-27.5-14.2-49.6-12.6-69.7z"
-                    data-original="#000000"></path>
-                </svg>
-                <a href="javascript:void(0)" class="text-sm ml-4">
-                  <strong>018826525**</strong>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="z-10 relative h-full max-md:min-h-[350px]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d325.8173606966471!2d91.72081609632265!3d22.496578968890763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30ad2777a615585d%3A0xdcf908f6e4f3a713!2sInternational%20Islamic%20University%20Chittagong!5e0!3m2!1sen!2sbd!4v1731336521703!5m2!1sen!2sbd"
-              width="600" height="450" style="border:0;"
-              class="left-0 top-0 h-full w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg" frameborder="0"
-              allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-
-    </main>
-
-    <footer class="bg-gray-900 text-gray-100 pt-28">
-      <div class="footer container py-16">
-        
-        <aside class="grid-flow-col items-center">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            class="fill-current">
-            <path
-              d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path>
-          </svg>
-          <p>
-            Eventify Ltd.
-            <br />
-            Providing event management.
-          </p>
-        </aside>
-
-        <nav>
-          <h6 class="footer-title">Services</h6>
-          <a class="link link-hover">Network</a>
-          <a class="link link-hover">Parking</a>
-          <a class="link link-hover">Marketing</a>
-          <a class="link link-hover">Advertisement</a>
-        </nav>
-        <nav>
-          <h6 class="footer-title">Company</h6>
-          <a class="link link-hover">About us</a>
-          <a class="link link-hover">Contact</a>
-          <a class="link link-hover">Jobs</a>
-          <a class="link link-hover">Press kit</a>
-        </nav>
-        <nav>
-          <h6 class="footer-title">Legal</h6>
-          <a class="link link-hover">Terms of use</a>
-          <a class="link link-hover">Privacy policy</a>
-          <a class="link link-hover">Cookie policy</a>
-        </nav>
-
-      </div>
-      
-      <div class="border-base-content border-t">
-        <div class="footer items-center container py-6">
-          <aside class="">
-            <p class="copyright leading-relaxed">
-              &copy; 2024 Eventify. All Rights Reserved by <a href="https://www.facebook.com/jannatul.ferdous.448035"
-                class="copyright-link inline-block text-green-600">Jannatul Ferdous</a>.
-            </p>
-          </aside>
-          <nav class="md:place-self-center md:justify-self-end">
-            <div class="grid grid-flow-col gap-4">
-              <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  class="fill-current">
-                  <path
-                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-                </svg>
-              </a>
-              <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  class="fill-current">
-                  <path
-                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-                </svg>
-              </a>
-              <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  class="fill-current">
-                  <path
-                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-                </svg>
-              </a>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </footer>
-
-  </body>
-  </html>
-  
+{% endblock %}

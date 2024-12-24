@@ -6,3 +6,9 @@ def index(request):
 
 def venue_page(request):
     return render(request, 'venue_page.html')
+
+def login(request):
+    return render(request, 'login.html')
+
+def register(request):
+    return render(request, 'register.html')
