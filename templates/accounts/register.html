@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Register - Eventify{% endblock %}
+{% block content %}
+
+<div class="flex items-center justify-center bg-white min-h-screen font-poppins m-8">
+    <div class="w-[90%] max-w-md px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-[#16a249] to-teal-600 rounded-[20px] p-2 shadow-lg">
+            <!-- Card container -->
+            <div class="bg-white rounded-[16px] p-6 shadow-md">
+                
+                <h1 class="text-center text-3xl font-bold text-slate-600 mb-6">Register</h1>
+
+                {% include "includes/alert.html" %}
+    
+                <form method="post" class="space-y-4">
+                    {% csrf_token %}
+
+                    <div>
+                        <label for="username" class="block mb-2 text-sm font-medium text-slate-600">Username</label>
+                        <input type="text" name="username" id="username" class="w-full p-3 border rounded-lg bg-slate-200 text-slate-700 shadow-sm focus:ring-2 focus:ring-[#16a249] focus:outline-none" placeholder="Choose a username" />
+                    </div>
+
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-slate-600">Email</label>
+                        <input type="email" name="email" id="email" class="w-full p-3 border rounded-lg bg-slate-200 text-slate-700 shadow-sm focus:ring-2 focus:ring-[#16a249] focus:outline-none" placeholder="Enter your email address" />
+                    </div>
+
+                    <div>
+                        <label for="password1" class="block mb-2 text-sm font-medium text-slate-600">Password</label>
+                        <input type="password" name="password1" id="password1" class="w-full p-3 border rounded-lg bg-slate-200 text-slate-700 shadow-sm focus:ring-2 focus:ring-[#16a249] focus:outline-none" placeholder="Create a password" />
+                    </div>
+
+                    <div>
+                        <label for="password2" class="block mb-2 text-sm font-medium text-slate-600">Confirm Password</label>
+                        <input type="password" name="password2" id="password2" class="w-full p-3 border rounded-lg bg-slate-200 text-slate-700 shadow-sm focus:ring-2 focus:ring-[#16a249] focus:outline-none" placeholder="Confirm your password" />
+                    </div>
+
+                    <div>
+                        <label for="role" class="block mb-2 text-sm font-medium text-slate-600">Role</label>
+                        <select name="role" id="role" class="w-full p-3 border rounded-lg bg-slate-200 text-slate-700 shadow-sm focus:ring-2 focus:ring-[#16a249] focus:outline-none">
+                            <option value="owner">owner</option>
+                            <option value="user">User</option>
+                            <!-- Add more roles as needed -->
+                        </select>
+                    </div>
+
+                    <button type="submit" class="w-full p-3 mt-4 bg-gradient-to-r from-[#16a249] to-teal-600 text-white rounded-lg shadow hover:from-teal-600 hover:to-[#16a249] transition-all duration-300">Register</button>
+                </form>
+
+                <div class="mt-4 text-center">
+                    <p class="text-sm text-slate-500">Already have an account?
+                        <a href="{% url 'login' %}" class="text-blue-500 hover:underline">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+<br>
+
+    
+    
+    {% endblock content %}

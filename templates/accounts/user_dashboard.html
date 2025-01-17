@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}User Dashboard - Eventify{% endblock %}
+
+{% block content %}
+<div class="container mx-auto p-6">
+    <!-- Display user details -->
+     
+    {% include "includes/alert.html" %}
+
+    <div class="mb-6">
+        <h2 class="text-2xl font-semibold text-gray-900">Welcome, {{ user.username }}!</h2>
+        <p class="mt-2 text-gray-600">You can manage your profile and bookings here.</p>
+    </div>
+
+    <div class="mb-6">
+        <h3 class="text-2xl font-semibold text-gray-800">Your Bookings</h3>
+        {% if booked_count > 0 %}
+            <p class="mt-2 text-gray-600"><strong>You have {{ booked_count }} booked venue(s).</strong></p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+                {% for booking in page_obj %}
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden border">
+                        <!-- Venue Image -->
+                        <div class="relative w-full h-48">
+                            <img src="{{ booking.club.image.url }}" alt="{{ booking.club.name }}" class="object-cover w-full h-full" width="100%">
+                            <div class="absolute inset-0 bg-black opacity-25"></div>
+                        </div>
+                        <!-- Card Content -->
+                        <div class="p-4">
+                            <h4 class="text-xl font-semibold text-gray-900">{{ booking.club.name }}</h4>
+                            <p class="text-gray-600"><b>Location:</b> {{ booking.club.location.name }}</p>
+                            <p class="text-gray-600"><b>Category:</b> {{ booking.club.category.name }}</p>
+                            <p class="text-gray-600"><b>Catering:</b> {{ booking.club.catering.name }}</p>
+                            <p class="text-gray-600"><b>Booking Date:</b> {{ booking.booking_date }}</p>
+                            <p class="text-gray-600"><b>Status:</b>
+                                {% if booking.status == 'approved' %}
+                                    <span class="text-green-600 font-bold">Approved</span>
+                                {% elif booking.status == 'rejected' %}
+                                    <span class="text-red-600 font-bold">Rejected</span>
+                                {% else %}
+                                    <span class="text-yellow-600 font-bold">Pending</span>
+                                {% endif %}
+                            </p>
+                        </div>
+
+                        <!-- Cancel Booking Button -->
+                        <div class="px-4 py-2 text-center">
+                            <form method="post" action="{% url 'cancel_booking' booking.id %}">
+                                {% csrf_token %}
+                                <button type="submit" id="btn-danger"
+                                    class="w-full py-2 px-4 rounded-lg bg-red-600 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50 transition-colors">
+                                    Cancel Booking
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+             <br>
+            <div class="flex justify-center mt-8">
+                <nav class="inline-flex space-x-1">
+                    {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-l hover:bg-gray-300">Previous</a>
+                    {% endif %}
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <span class="px-4 py-2 text-white rounded" id="btn-primary">{{ num }}</span>
+                        {% else %}
+                            <a href="?page={{ num }}" class="px-4 py-2 bg-gray-200 text-gray-800 hover:bg-gray-300">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-r hover:bg-gray-300">Next</a>
+                    {% endif %}
+                </nav>
+            </div>
+
+        {% else %}
+            <p>You have not booked any venues yet.</p>
+        {% endif %}
+    </div>
+
+    <br>
+
+    <!-- Password Update Form -->
+    <div class="mb-6">
+        <h3 class="text-xl font-semibold text-gray-800">Account Settings</h3>
+        <p class="mt-2 text-gray-600">Want to update your password? <a href="{% url 'update_password' %}" class="text-blue-600 hover:underline">Click here to change your password.</a></p>
+    </div>
+</br>
+
+{% endblock %}

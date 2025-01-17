@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% block title %}Owner Dashboard - Eventify{% endblock %}
+
+{% block content %}
+
+<div class="container mx-auto p-6">
+
+    {% include "includes/alert.html" %}
+    
+    <br>
+    <div class="mb-6">
+        <h2 class="text-2xl font-semibold text-gray-900">Welcome, {{ user.username }}!</h2>
+        <p class="mt-2 text-gray-600">You can manage your clubs and booking requests here.</p>
+    </div>
+
+    <!-- Link to Add New Club -->
+    <div class="mb-6">
+        <a href="{% url 'create_club' %}" class="text-blue-600 hover:underline">Add a New Club</a>
+    </div>
+
+
+   <!-- Section for Clubs Owned by the User -->
+<div class="YourClubs container py-16">
+    <h1 class="flex justify-center text-4xl font-semibold mb-8">YOUR CLUBS</h1>
+  
+    {% if clubs %}
+    <ul class="club-list grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {% for club in clubs %}
+      <li>
+        <div
+          class="club-card relative rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl border"
+        >
+          <figure class="card-banner relative">
+            <img
+              src="{{ club.image.url }}"
+              alt="{{ club.name }}"
+              loading="lazy"
+              class="w-full h-64 object-cover"
+            />
+          </figure>
+          <div class="card-content p-6">
+            <div class="min-h-24">
+              <h3 class="text-xl font-semibold mb-2">
+                <a
+                  href="{% url 'edit_club' club.id %}"
+                  class="card-title transition-colors duration-300 hover:text-blue-600"
+                >
+                  {{ club.name }}
+                </a>
+              </h3>
+              <p class="text-gray-600"><b>Location:</b> {{ club.location.name }}</p>
+              <p class="text-gray-600"><b>Category:</b> {{ club.category.name }}</p>
+              <p class="text-gray-600"><b>Capacity:</b> {{ club.capacity }}</p>
+              <p class="text-gray-600"><b>Status:</b>
+                {% if club.status == 'pending' %}
+                <span class="text-yellow-600">Pending</span>
+                {% else %}
+                <span class="text-green-600">Approved</span>
+                {% endif %}
+              </p>
+            </div>
+  
+            <div
+              class="card-actions flex flex-wrap justify-between items-center gap-4 mt-6"
+            >
+              <a
+                href="{% url 'edit_club' club.id %}"
+                class="text-blue-600 hover:underline"
+                >Edit</a
+              >
+              <a
+                href="{% url 'delete_club' club.id %}"
+                class="text-red-600 hover:underline"
+                >Delete</a
+              >
+            </div>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <div class="text-center py-8">
+      <p class="text-lg text-gray-500">You have not added any clubs yet.</p>
+      
+    </div>
+    {% endif %}
+  </div>
+
+  
+
+    <!-- Section for Booking Requests -->
+     <br>
+    <div class="mb-6">
+        <h3 class="text-2xl font-semibold text-gray-800">Booking Requests</h3>
+        <br>
+        {% if bookings %}
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white border border-gray-300 shadow-md rounded-lg">
+                    <thead>
+                        <tr class="bg-gray-200 text-gray-700">
+                            <th class="px-6 py-3 text-left text-sm font-semibold">User</th>
+                            <th class="px-6 py-3 text-left text-sm font-semibold">Club</th>
+                            <th class="px-6 py-3 text-left text-sm font-semibold">Booking-Date</th>
+                            <th class="px-6 py-3 text-left text-sm font-semibold">Booking-Price</th>
+                            <th class="px-6 py-3 text-left text-sm font-semibold">Status</th>
+                            <th class="px-6 py-3 text-left text-sm font-semibold">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for booking in bookings %}
+                        {% if booking.status != 'rejected' %}
+                            <tr class="border-t border-gray-300">
+                                <td class="px-6 py-4 text-gray-800">{{ booking.user.username }}</td>
+                                <td class="px-6 py-4 text-gray-800">{{ booking.club.name }}</td>
+                                <td class="px-6 py-4 text-gray-800">{{ booking.booking_date }}</td>
+                               
+                                <td class="px-6 py-4 text-gray-800">৳ {{ booking.club.price_per_day }}</td>
+                    
+                                <td class="px-6 py-4">
+                                    {% if booking.status == 'approved' %}
+                                        <span class="text-green-600">Approved</span>
+                                    {% else %}
+                                        <span class="text-yellow-600">Pending</span>
+                                    {% endif %}
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="{% url 'approve_booking' booking.id %}" class="text-green-600 hover:underline">Approve</a> |
+                                    <a href="{% url 'reject_booking' booking.id %}" class="text-red-600 hover:underline">Reject</a>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                    
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p>No booking requests at the moment.</p>
+        {% endif %}
+    </div>
+
+       <!-- Password Update Form -->
+    </br>
+    </br>
+
+       <div class="mt-6">
+        <h3 class="text-xl font-semibold text-gray-800">Account Settings</h3>
+        <p class="mt-2 text-gray-600">Want to update your password? <a href="{% url 'update_password' %}" class="text-blue-600 hover:underline">Click here to change your password.</a></p>
+    </div>
+</br>
+</div>
+
+{% endblock %}

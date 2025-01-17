@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Club - Eventify{% endblock %}
+
+{% block content %}
+<div class="container mx-auto max-w-3xl p-6 bg-white shadow-md rounded-lg mt-8">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Edit Club - {{ club.name }}</h1>
+    <hr class="mb-6">
+
+    <form method="POST" enctype="multipart/form-data" class="space-y-6">
+        {% csrf_token %}
+        
+        <!-- Club Form Fields -->
+        <div class="mb-4">
+            {{ club_form.as_p }}
+        </div>
+
+        <!-- Existing Images -->
+        <div class="mb-4">
+            <h3 class="text-lg font-semibold">Existing Images</h3>
+            <div class="grid grid-cols-3 gap-4">
+                {% for image_form in image_forms %}
+                <div class="relative">
+                    <img src="{{ image_form.instance.image.url }}" alt="Image" class="w-full h-auto rounded-md shadow-sm mb-2">
+                    <div class="absolute top-0 right-0">
+                        <button type="button" class="bg-red-600 text-white px-2 py-1 rounded-lg hover:bg-red-500">
+                            Remove
+                        </button>
+                    </div>
+                </div>
+                {% empty %}
+                <p>No images uploaded yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Upload New Images -->
+        <div class="mb-4">
+            <label for="id_images" class="block text-sm font-medium text-gray-700">Upload New Images</label>
+            <input type="file" name="images" id="id_images" class="w-full p-3 border rounded-md bg-slate-200 text-gray-700" multiple>
+        </div>
+
+        <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-teal-600 text-white py-3 rounded-lg text-lg font-medium hover:from-teal-600 hover:to-green-500 transition duration-300 shadow-md">
+            Update Club
+        </button>
+    </form>
+</div>
+{% endblock %}

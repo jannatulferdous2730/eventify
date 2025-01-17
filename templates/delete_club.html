@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Club - Eventify{% endblock %}
+
+{% block content %}
+<div class="container mx-auto min-h-screen flex items-center justify-center">
+    <div class="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
+        <h1 class="text-3xl font-bold text-gray-800 text-center mb-4">Delete Club</h1>
+        <hr class="mb-6">
+        <p class="text-gray-700 text-center mb-6">
+            Are you sure you want to delete the club "<span class="font-semibold">{{ club.name }}</span>"? 
+        </p>
+        <form method="POST" class="space-y-4">
+            {% csrf_token %}
+            <button 
+                type="submit" 
+                class="w-full bg-gradient-to-r from-red-600 to-red-500 text-white py-3 rounded-lg text-lg font-medium hover:from-red-700 hover:to-red-600 transition duration-300 shadow-md"
+            >
+                Delete
+            </button>
+            <a 
+                href="{% url 'owner_dashboard' %}" 
+                class="block w-full text-center bg-gradient-to-r from-gray-300 to-gray-400 text-gray-700 py-3 rounded-lg text-lg font-medium hover:from-gray-400 hover:to-gray-500 transition duration-300 shadow-md"
+            >
+                Cancel
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock %}

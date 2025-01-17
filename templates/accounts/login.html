@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Login - Eventify{% endblock %}
+{% block content %}
+
+<div class="flex font-poppins items-center justify-center">
+    <div class="h-screen w-screen flex justify-center items-center bg-white">
+        <div class="grid gap-8">
+            <div id="back-div" class="bg-gradient-to-r from-[#16a249] to-teal-600 rounded-[26px] m-4">
+                <div class="border-4 border-transparent rounded-[16px] bg-white shadow-lg xl:p-10 2xl:p-10 lg:p-10 md:p-10 sm:p-5 m-2 ">
+                    <h1 class="pt-8 pb-6 font-bold text-slate-600 text-5xl text-center cursor-default">Log in</h1>
+                    
+                    {% include "includes/alert.html" %}
+                    
+                    <form  method="post" class="space-y-4">
+
+                        {% csrf_token %}
+
+                        
+                        <div>
+                            <label for="username" class="mb-2 text-lg text-slate-600">Username</label>
+                            <input type="text" name="username" id="email" class="border p-3 shadow-md bg-slate-200 text-slate-700 placeholder:text-base ease-in-out duration-300 border-gray-300 rounded-lg w-full" placeholder="User Name" />
+                        </div>
+                        <div>
+                            <label for="password" class="mb-2 text-slate-600 text-lg">Password</label>
+                            <input type="password" name="password" id="password" class="border p-3 shadow-md bg-slate-200 text-slate-700 placeholder:text-base ease-in-out duration-300 border-gray-300 rounded-lg w-full" placeholder="Password" />
+                        </div>
+                        <button type="submit" class="bg-gradient-to-r from-[#16a249] to-teal-600 shadow-lg mt-6 p-2 text-white rounded-lg w-full hover:from-teal-600 hover:to-[#16a249] transition duration-300 ease-in-out">LOG IN</button>
+                    </form>
+                    <div class="flex flex-col mt-4 items-center justify-center text-sm">
+                        <h3 class="text-slate-500">Don't have an account?
+                            <a href="{% url 'register' %}" class="group text-blue-400 transition-all duration-100 ease-in-out">
+                                <span class="bg-left-bottom bg-gradient-to-r from-blue-400 to-blue-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">Register</span>
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Create Club - Eventify{% endblock %}
+
+{% block content %}
+<div class="container mx-auto max-w-3xl p-6 bg-white shadow-md rounded-lg mt-8">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Add a New Club</h1>
+    <hr class="mb-6">
+
+    {% include "includes/alert.html" %}
+    
+    <form method="POST" enctype="multipart/form-data" class="space-y-6">
+        {% csrf_token %}
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Render Main Club Fields -->
+            {% for field in form %}
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2" for="{{ field.id_for_label }}">
+                    {{ field.label_tag }}
+                </label>
+                {{ field }}
+                {% if field.errors %}
+                <p class="text-red-600 text-sm mt-1">{{ field.errors }}</p>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Multiple Image Upload Fields -->
+        <div class="space-y-4">
+            <label class="block text-sm font-medium text-gray-700 mb-2" for="id_images">
+                Upload Images (Multiple allowed)
+            </label>
+            <input
+                type="file"
+                name="images"
+                id="id_images"
+                class="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 focus:outline-none"
+                multiple
+            >
+        </div>
+
+        <button
+            type="submit"
+            class="w-full bg-gradient-to-r from-green-500 to-teal-600 text-white py-3 rounded-lg text-lg font-medium hover:from-teal-600 hover:to-green-500 transition duration-300 shadow-md"
+        >
+            Create Club
+        </button>
+    </form>
+</div>
+<br>
+<br>
+{% endblock %}
